@@ -20,7 +20,7 @@ namespace CowboyCafe.Data
 
         private bool pickle = true;
         /// <summary>
-        /// If the pul;ed pork comes with pickle
+        /// If the pulled pork comes with pickle
         /// </summary>
         public bool Pickle
         {
@@ -51,7 +51,7 @@ namespace CowboyCafe.Data
 
 
         /// <summary>
-        /// Special instructions for the preparation of the chicken
+        /// Special instructions for the preparation of the pulled pork
         /// </summary>
         public List<string> SpecialInstructions
         {

@@ -10,7 +10,7 @@ namespace CowboyCafe.Data
     {
         private bool bun = true;
         /// <summary>
-        /// If the DakotaDouble is topped with cheese
+        /// If the DakotaDouble is topped with bun
         /// </summary>
         public bool Bun
         {
