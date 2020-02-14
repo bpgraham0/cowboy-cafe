@@ -1,4 +1,8 @@
-﻿using System;
+﻿/* Author: Ben Graham
+ * Class: 
+ * Purpose: Information about water
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,6 +10,9 @@ namespace CowboyCafe.Data
 {
     public class Water : Drink
     {
+        /// <summary>
+        /// holds price info
+        /// </summary>
         public override double Price
         {
             get
@@ -24,6 +31,9 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// holds calorie info
+        /// </summary>
         public override uint Calories
         {
             get
@@ -42,11 +52,19 @@ namespace CowboyCafe.Data
             }
         }
 
-
+        /// <summary>
+        /// if water has lemon
+        /// </summary>
         public bool Lemon { get; set; } = false;
 
+        /// <summary>
+        /// if ice is included
+        /// </summary>
         public override bool Ice { get; set; } = true;
 
+        /// <summary>
+        /// instructions for water
+        /// </summary>
         public override List<string> SpecialInstructions {
             get
             {

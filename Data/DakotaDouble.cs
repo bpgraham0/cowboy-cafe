@@ -1,4 +1,8 @@
-﻿using System;
+﻿/* Author: Ben Graham
+ * Class: DakotaDouble.cs
+ * Purpose: Information about dakota double
+ */
+using System;
 using System.Collections.Generic;
 
 namespace CowboyCafe.Data

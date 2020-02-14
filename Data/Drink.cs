@@ -1,4 +1,8 @@
-﻿using System;
+﻿/* Author: Ben Graham
+ * Class: Drink.cs
+ * Purpose: Information about generic drinks
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,6 +10,9 @@ namespace CowboyCafe.Data
 {
     public abstract class Drink
     {
+        /// <summary>
+        /// initalizes size to small
+        /// </summary>
         public Size Size { get; set; } = Size.Small;
 
         /// <summary>

@@ -1,4 +1,9 @@
-﻿using System;
+﻿/* Author: Nathan Bean
+ * Edited by: Ben Graham
+ * Class: CowPokeChili
+ * Purpose: Information about Cowpoke Chili
+ */
+using System;
 using System.Collections.Generic;
 
 namespace CowboyCafe.Data

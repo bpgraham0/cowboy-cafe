@@ -1,4 +1,8 @@
-﻿using System;
+﻿/* Author: Ben Graham
+ * Class: TexasTriple
+ * Purpose: Information about texas tripple burger
+ */
+using System;
 using System.Collections.Generic;
 
 namespace CowboyCafe.Data

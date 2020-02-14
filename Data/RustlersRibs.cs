@@ -1,4 +1,8 @@
-﻿using System;
+﻿/* Author: Ben Graham
+ * Class: RustlersRibs.cs
+ * Purpose: Information about rustlers ribs
+ */
+using System;
 using System.Collections.Generic;
 
 namespace CowboyCafe.Data

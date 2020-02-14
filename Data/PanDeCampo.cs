@@ -1,4 +1,8 @@
-﻿using System;
+﻿/* Author: Ben Graham
+ * Class: PanDeCampo.cs
+ * Purpose: Information about pan de campo
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,6 +10,9 @@ namespace CowboyCafe.Data
 {
     public class PanDeCampo : Side
     {
+        /// <summary>
+        /// holds calorie info
+        /// </summary>
         public override uint Calories
         {
             get
@@ -24,6 +31,9 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// holds price info
+        /// </summary>
         public override double Price
         {
             get

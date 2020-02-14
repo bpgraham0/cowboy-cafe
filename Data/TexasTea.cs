@@ -1,4 +1,8 @@
-﻿using System;
+﻿/* Author: Ben Graham
+ * Class: 
+ * Purpose: Information about texas tea
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,6 +10,9 @@ namespace CowboyCafe.Data
 {
     public class TexasTea : Drink
     {
+        /// <summary>
+        /// holds price info
+        /// </summary>
         public override double Price
         {
             get
@@ -25,6 +32,9 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// calorie info
+        /// </summary>
         public override uint Calories
         {
             get
@@ -60,12 +70,23 @@ namespace CowboyCafe.Data
                 
             }
         }
-
+        /// <summary>
+        /// ice info
+        /// </summary>
         public override bool Ice { get; set; } = true;
+        /// <summary>
+        /// holds sweet info
+        /// </summary>
         public bool Sweet { get; set; } = true;
 
+        /// <summary>
+        /// whether tea has lemon or not
+        /// </summary>
         public bool Lemon { get; set; } = false;
 
+        /// <summary>
+        /// list of instructions
+        /// </summary>
         public override List<string> SpecialInstructions 
         {
             get

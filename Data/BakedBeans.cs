@@ -1,4 +1,8 @@
-﻿using System;
+﻿/* Author: Ben Graham
+ * Class: BakedBeans.cs
+ * Purpose: Information about baked beans
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,6 +10,9 @@ namespace CowboyCafe.Data
 {
     public class BakedBeans : Side
     {
+        /// <summary>
+        /// calorie info
+        /// </summary>
         public override uint Calories
         {
             get
@@ -23,7 +30,9 @@ namespace CowboyCafe.Data
                 }
             }
         }
-
+        /// <summary>
+        /// price info
+        /// </summary>
         public override double Price
         {
             get

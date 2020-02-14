@@ -1,4 +1,8 @@
-﻿using System;
+﻿/* Author: Ben Graham
+ * Class: TrailBurger.cs
+ * Purpose: Information about trailburger
+ */
+using System;
 using System.Collections.Generic;
 
 namespace CowboyCafe.Data

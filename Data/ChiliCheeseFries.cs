@@ -1,4 +1,8 @@
-﻿using System;
+﻿/* Author: Ben Graham
+ * Class: ChiliCheeseFries.cs
+ * Purpose: Information about Chili Cheese fries 
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,6 +10,9 @@ namespace CowboyCafe.Data
 {
     public class ChiliCheeseFries : Side
     {
+        /// <summary>
+        /// calorie info
+        /// </summary>
         public override uint Calories
         {
             get
@@ -24,6 +31,9 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// price info
+        /// </summary>
         public override double Price
         {
             get

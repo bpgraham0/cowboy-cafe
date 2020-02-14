@@ -1,4 +1,8 @@
-﻿using System;
+﻿/* Author: Ben Graham
+ * Class: CowboyCoffee.cs
+ * Purpose: Information about cowboy coffee
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,6 +10,9 @@ namespace CowboyCafe.Data
 {
     public class CowboyCoffee : Drink
     {
+        /// <summary>
+        /// holds price info
+        /// </summary>
         public override double Price
         {
             get
@@ -24,6 +31,9 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// holds calorie info
+        /// </summary>
         public override uint Calories
         {
             get
@@ -42,12 +52,24 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// if coffee is decaf
+        /// </summary>
         public bool Decaf { get; set; } = false;
 
+        /// <summary>
+        /// if coffee has cream
+        /// </summary>
         public bool RoomForCream { get; set; } = false;
 
+        /// <summary>
+        /// if coffee has ice
+        /// </summary>
         public override bool Ice { get; set; } = false;
 
+        /// <summary>
+        /// list of instructions
+        /// </summary>
         public override List<string> SpecialInstructions {
             get
             {

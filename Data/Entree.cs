@@ -1,4 +1,8 @@
-﻿using System;
+﻿/* Author: Ben Graham
+ * Class: Entree.cs
+ * Purpose: Information about generic entrees 
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 

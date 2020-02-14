@@ -1,4 +1,8 @@
-﻿using System;
+﻿/* Author: Ben Graham
+ * Class: AngryChicken.cs
+ * Purpose: Information about angry chicken
+ */
+using System;
 using System.Collections.Generic;
 
 namespace CowboyCafe.Data

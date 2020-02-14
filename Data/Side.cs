@@ -1,4 +1,8 @@
-﻿using System;
+﻿/* Author: Ben Graham
+ * Class: Side.cs
+ * Purpose: Information about sides
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 

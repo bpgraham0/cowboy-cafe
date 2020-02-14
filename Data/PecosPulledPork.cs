@@ -1,4 +1,8 @@
-﻿using System;
+﻿/* Author: Ben Graham
+ * Class: PecosPulledPork.cs
+ * Purpose: Information about pecos pulled pork
+ */
+using System;
 using System.Collections.Generic;
 
 namespace CowboyCafe.Data
