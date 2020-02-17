@@ -43,14 +43,14 @@ namespace CowboyCafe.Data
             set { greenOnions = value; }
         }
 
-        private bool tortillaChips = true;
+        private bool tortillaStrips = true;
         /// <summary>
         /// If the chili is topped with tortilla strips
         /// </summary>
-        public bool TortillaChips 
+        public bool TortillaStrips 
         { 
-            get { return tortillaChips; }
-            set { tortillaChips = value; }
+            get { return tortillaStrips; }
+            set { tortillaStrips = value; }
         }
 
         /// <summary>
@@ -87,7 +87,7 @@ namespace CowboyCafe.Data
                 if (!cheese) instructions.Add("hold cheese");
                 if (!sourCream) instructions.Add("hold sour cream");
                 if (!greenOnions) instructions.Add("hold green onions");
-                if (!tortillaChips) instructions.Add("hold tortilla strips");
+                if (!tortillaStrips) instructions.Add("hold tortilla strips");
 
                 return instructions;
             }
