@@ -51,5 +51,16 @@ namespace CowboyCafe.Data
                 }
             }
         }
+
+        /// <summary>
+        /// Adds Pan De Campo to order list
+        /// </summary>
+        /// <returns>name of item</returns>
+        public override string ToString()
+        {
+
+            return Size.ToString() + " Pan De Campo";
+        }
+
     }
 }

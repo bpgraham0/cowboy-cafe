@@ -81,6 +81,18 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
-        
+
+        /// <summary>
+        /// Adds Water to order list
+        /// </summary>
+        /// <returns>name of item</returns>
+        public override string ToString()
+        {
+            if (Decaf) return Size.ToString() + " Decaf Cowboy Coffee";
+
+
+            return  Size.ToString() + " Cowboy Coffee";
+        }
+
     }
 }

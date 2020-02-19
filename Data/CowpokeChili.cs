@@ -92,6 +92,17 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+
+        /// <summary>
+        /// Adds CowpokeChili to order list
+        /// </summary>
+        /// <returns>name of item</returns>
+        public override string ToString()
+        {
+
+            return "Cowpoke Chili";
+        }
+
     }
 }
 

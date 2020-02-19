@@ -157,6 +157,16 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+        /// <summary>
+        /// Adds Texas Triple to order list
+        /// </summary>
+        /// <returns>name of item</returns>
+        public override string ToString()
+        {
+
+            return "Texas Triple";
+        }
+
     }
 }
 

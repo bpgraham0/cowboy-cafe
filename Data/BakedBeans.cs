@@ -50,5 +50,16 @@ namespace CowboyCafe.Data
                 }
             }
         }
+
+
+        /// <summary>
+        /// Adds Baked Beans to order list
+        /// </summary>
+        /// <returns>name of item</returns>
+        public override string ToString()
+        {
+
+            return Size.ToString() + " Baked Beans";
+        }
     }
 }

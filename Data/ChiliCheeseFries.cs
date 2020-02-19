@@ -51,5 +51,15 @@ namespace CowboyCafe.Data
                 }
             }
         }
+
+        /// <summary>
+        /// Adds ChiliCheese Fries to order list
+        /// </summary>
+        /// <returns>name of item</returns>
+        public override string ToString()
+        {
+
+            return Size.ToString() + " Chili Cheese Fries";
+        }
     }
 }

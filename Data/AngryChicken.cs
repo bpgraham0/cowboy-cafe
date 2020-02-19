@@ -69,6 +69,17 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+
+
+        /// <summary>
+        /// Adds Angry Chicken to order list
+        /// </summary>
+        /// <returns>name of item</returns>
+        public override string ToString()
+        {
+
+            return "Angry Chicken";
+        }
     }
 }
 

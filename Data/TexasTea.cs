@@ -101,7 +101,15 @@ namespace CowboyCafe.Data
             }
         }
 
-     
-        
+        /// <summary>
+        /// Adds texas tea to order list
+        /// </summary>
+        /// <returns>name of item</returns>
+        public override string ToString()
+        {
+            
+            return Size.ToString()+ " Texas Tea";
+        }
+
     }
 }
