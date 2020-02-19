@@ -11,25 +11,43 @@
             <Setter Property="Height" Value="75"/>
         </Style>
     </UserControl.Resources>
-    <Grid>
+    <Grid Background="Magenta">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="40*"/>
+            <ColumnDefinition Width="40*"/>
+            <ColumnDefinition Width="40*"/>
+            <ColumnDefinition Width="40*"/>
         </Grid.ColumnDefinitions>
         <StackPanel>
-            <TextBlock TextAlignment="Center">Entrees</TextBlock>
-            <Button Name="AddAngryChicken">AndgryChicken</Button>
-            <Button>CowpokeChili</Button>
+            <TextBlock TextAlignment="Center" Height="40"  Background="White" FontSize="18" FontWeight="Bold">Entrees</TextBlock>
+            <Button Name="AddAngryChicken" Height="55" Click="AddAngryChicken_Click">Angry Chicken</Button>
+            <Button Name="AddRustlersRibs" Height="55" Click="AddRustlersRibs_Click" >Rustler's Ribs</Button>
+            <Button Name="AddCowpokeChili" Height="55" Click="AddCowpokeChili_Click">Cowpoke Chili</Button>
+            <Button Name="PecosPulledPork" Height="55" Click="PecosPulledPork_Click">Pecos Pulled Pork</Button>
+            <Button Name="AddTrailBurger" Height="55" Click="AddTrailBurger_Click">Trail Burger</Button>
+            <Button Name="AddDakotaDoubleBurger" Height="55" Click="AddDakotaDoubleBurger_Click">Dakota Double Burger</Button>
+            <Button Name="AddTexasTripleBurger" Height="55" Click="AddTexasTripleBurger_Click">Texas Triple Burger</Button>
         </StackPanel>
 
         <StackPanel Grid.Column="1">
-            <TextBlock TextAlignment="Center">Side</TextBlock>
-            <Button>PanDeCampo</Button>
-            <Button>CornDodgers</Button>
-            <Button>ChiliCheeseFries</Button>
-            <Button>BakedBeans</Button>
+            <TextBlock TextAlignment="Center" Height="40"  Background="White" FontSize="18" FontWeight="Bold">Sides</TextBlock>
+            <Button Name ="AddPanDeCampo" Height="96.65" Click="AddPanDeCampo_Click">PanDeCampo</Button>
+            <Button Name ="AddCornDodgers" Height="96.65" Click="AddCornDodgers_Click">CornDodgers</Button>
+            <Button Name ="AddChiliCheeseFries" Height="96.65" Click="AddChiliCheeseFries_Click">ChiliCheeseFries</Button>
+            <Button Name ="AddBakedBeans" Height="96.65">BakedBeans</Button>
+        </StackPanel>
+
+        <StackPanel Grid.Column="2" Grid.ColumnSpan="2">
+            <TextBlock TextAlignment="Center" Height="40" Background="White" FontSize="18" FontWeight="Bold">Drinks</TextBlock>
+            <Button Name ="AddJerkedSoda" Height="96.65" Click="AddJerkedSoda_Click">Jerked Soda</Button>
+            <Button Name ="AddTexasTea" Height="96.65" Click="AddTexasTea_Click">Texas Tea</Button>
+            <Button Name ="AddCowboyCoffee" Height="96.65" Click="AddCowboyCoffee_Click">Cowboy Coffee</Button>
+            <Button Name ="AddWater" Height="96.65" Click="AddWater_Click">Water</Button>
+        </StackPanel>
+        <StackPanel Grid.Column="4" Grid.ColumnSpan="2">
+            <TextBlock Height="40"  Background="White" FontSize="18" FontWeight="Bold">Order</TextBlock>
+            <ListView Name="OrderListView" HorizontalAlignment="Center">
+            </ListView>
         </StackPanel>
 
     </Grid>
