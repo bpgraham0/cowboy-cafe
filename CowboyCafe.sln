@@ -12,12 +12,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{A65D0D04-CB16-4543-B9C3-C7D7ABE3E403}"
-	ProjectSection(SolutionItems) = preProject
-		..\..\..\..\..\..\Downloads\CowboyCafe.pdf = ..\..\..\..\..\..\Downloads\CowboyCafe.pdf
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PointOfSale", "PointOfSale\PointOfSale.csproj", "{5E742C9C-12AC-486B-A07B-51BEF037D00F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PointOfSale", "PointOfSale\PointOfSale.csproj", "{5E742C9C-12AC-486B-A07B-51BEF037D00F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
