@@ -84,8 +84,31 @@ namespace CowboyCafe.Data
         /// <returns>name of item</returns>
         public override string ToString()
         {
+            if(Flavor == SodaFlavor.BirchBeer)
+            {
+                return Size.ToString() + " " + "Birch Beer Jerked Soda";
 
-            return Size.ToString() + " " + Flavor.ToString() +  " Jerked Soda";
+            }
+            else if (Flavor == SodaFlavor.CreamSoda)
+            {
+                return Size.ToString() + " " + "Cream Soda Jerked Soda";
+
+            }
+            else if (Flavor == SodaFlavor.OrangeSoda)
+            {
+                return Size.ToString() + " " + "Orange Soda Jerked Soda";
+
+            }
+            else if (Flavor == SodaFlavor.RootBeer)
+            {
+                return Size.ToString() + " " + "Root Beer Jerked Soda";
+
+            }
+            else
+            {
+                return Size.ToString() + " " + Flavor.ToString() + " Jerked Soda";
+
+            }
         }
 
     }

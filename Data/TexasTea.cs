@@ -107,8 +107,13 @@ namespace CowboyCafe.Data
         /// <returns>name of item</returns>
         public override string ToString()
         {
-            
-            return Size.ToString()+ " Texas Tea";
+            if (Sweet)
+            {
+                return Size.ToString() + " Texas Sweet Tea";
+
+            }
+            return Size.ToString()+ " Texas Plain Tea";
+
         }
 
     }
