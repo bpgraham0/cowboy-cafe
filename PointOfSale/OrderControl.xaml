@@ -20,76 +20,19 @@
             <ColumnDefinition Width="40*"/>
             <ColumnDefinition Width="40*"/>
             <ColumnDefinition Width="40*"/>
-            <ColumnDefinition Width="40*"/>
+            <ColumnDefinition Width="50*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="10*"/>
             <RowDefinition Height="90*"/>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" Height="auto" Grid.ColumnSpan="3">
-            <Button Name="ItemSelection" Height="50" Width="200" Margin="1,1,0,1">Item Selection</Button>
-            <Button Name="CancelOrder" Height="50" Width="200" Margin="1,1,0,1">Cancel Order</Button>
-            <Button Name="CompleteOrder" Height="50" Width="200" Margin="1,1,0,1">Complete Order</Button>
-
+            <Button Name="ItemSelection" Height="50" Width="185"  Margin="1,1,1,1" Click="ItemSelection_Click">Item Selection</Button>
+            <Button Name="CancelOrder" Height="50" Width="185" Margin="1,1,1,1" Click="CancelOrder_Click">Cancel Order</Button>
+            <Button Name="CompleteOrder" Height="50" Width="185" Margin="1,1,1,1" Click="CompleteOrder_Click">Complete Order</Button>
         </StackPanel>
-        <StackPanel Grid.Row="1" Margin="1,1,1,1">
-            <TextBlock TextAlignment="Center" Height="40"  Background="White" FontSize="18" FontWeight="Bold" Margin="1,1,1,1">Entrees</TextBlock>
-            <Button Name="AddAngryChicken" Height="50
-                    " Click="AddAngryChicken_Click" Margin="1,1,1,1">Angry Chicken</Button>
-            <Button Name="AddRustlersRibs" Height="50" Click="AddRustlersRibs_Click" Margin="1,1,1,1" >Rustler's Ribs</Button>
-            <Button Name="AddCowpokeChili" Height="50" Click="AddCowpokeChili_Click" Margin="1,1,1,1">Cowpoke Chili</Button>
-            <Button Name="PecosPulledPork" Height="50" Click="PecosPulledPork_Click" Margin="1,1,1,1">Pecos Pulled Pork</Button>
-            <Button Name="AddTrailBurger" Height="50" Click="AddTrailBurger_Click" Margin="1,1,1,1">Trail Burger</Button>
-            <Button Name="AddDakotaDoubleBurger" Height="50" Click="AddDakotaDoubleBurger_Click" Margin="1,1,1,1">Dakota Double Burger</Button>
-            <Button Name="AddTexasTripleBurger" Height="50" Click="AddTexasTripleBurger_Click" Margin="1,1,1,1">Texas Triple Burger</Button>
-        </StackPanel>
-
-        <StackPanel Grid.Row="1" Grid.Column="1" Margin="1,1,1,1">
-            <TextBlock TextAlignment="Center" Height="40"  Background="White" FontSize="18" FontWeight="Bold" Margin="1,1,1,1">Sides</TextBlock>
-            <Button Name ="AddPanDeCampo" Height="87.5" Click="AddPanDeCampo_Click" Margin="1,1,1,1">PanDeCampo</Button>
-            <Button Name ="AddCornDodgers" Height="87.5" Click="AddCornDodgers_Click" Margin="1,1,1,1">CornDodgers</Button>
-            <Button Name ="AddChiliCheeseFries" Height="87.5" Click="AddChiliCheeseFries_Click" Margin="1,1,1,1">ChiliCheeseFries</Button>
-            <Button Name ="AddBakedBeans" Height="87.5" Margin="1,1,1,1" Click="AddBakedBeans_Click">BakedBeans</Button>
-        </StackPanel>
-
-        <StackPanel Grid.Row="1" Grid.Column="2" Margin="1,1,1,1">
-            <TextBlock TextAlignment="Center" Height="40" Background="White" FontSize="18" FontWeight="Bold" Margin="1,1,1,1">Drinks</TextBlock>
-            <Button Name ="AddJerkedSoda" Height="87.5" Click="AddJerkedSoda_Click" Margin="1,1,1,1">Jerked Soda</Button>
-            <Button Name ="AddTexasTea" Height="87.5" Click="AddTexasTea_Click" Margin="1,1,1,1">Texas Tea</Button>
-            <Button Name ="AddCowboyCoffee" Height="87.5" Click="AddCowboyCoffee_Click" Margin="1,1,1,1">Cowboy Coffee</Button>
-            <Button Name ="AddWater" Height="87.5" Click="AddWater_Click" Margin="1,1,1,1">Water</Button>
-        </StackPanel>
-
-        <StackPanel Grid.RowSpan="2" Grid.Column="3" Margin="1,1,1,1">
-
-            <StackPanel Orientation="Horizontal" Height="40" Background="White" Margin="1,1,1,1">
-                <TextBlock Height="40" TextAlignment="Center" Background="White" FontSize="18" FontWeight="Bold" Margin="0,5,0,0">Order</TextBlock>
-                <TextBlock Height="40" TextAlignment="Center"  Background="White" Name="OrderNumber" Text="{Binding Path= OrderNumber, StringFormat=c }"/>
-            </StackPanel>
-            <ListBox Height="350" ItemsSource="{Binding Path = Items}">
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="60*"/>
-                                <ColumnDefinition Width="5*"/>
-                                <ColumnDefinition Width="35*"/>
-                            </Grid.ColumnDefinitions>
-                            <TextBlock Grid.Column="0" Name="Item" Text="{Binding}" />
-                            <TextBlock Grid.Column="1" Text="|"/>
-                            <TextBlock Grid.Column="2" Name="Price" Text="{Binding}" FontWeight="Bold"/>
-                            
-                        </Grid>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
-            <StackPanel Orientation="Horizontal" Height="40" Background="White" Margin="1,1,1,1">
-                <TextBlock Text="Subtotal" Width="140" VerticalAlignment="Center"/>
-                <TextBlock Height="40" Background="White" Name="Subtotal" Text="{Binding Path= Subtotal, StringFormat=c}"/>
-
-            </StackPanel>
-                
-        </StackPanel>
+        <local:MenuItemSelectionControl Grid.Row="1" Grid.ColumnSpan="3"/>
+        <local:OrderSummaryControl Grid.RowSpan="2" Grid.Column="3"/>
 
     </Grid>
 </UserControl>

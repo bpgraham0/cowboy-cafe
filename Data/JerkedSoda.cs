@@ -1,5 +1,5 @@
 ﻿/* Author: Ben Graham
- * Class: JerkedSodaa
+ * Class: JerkedSoda.cs
  * Purpose: Information about JerkedSoda
  */
 using System;

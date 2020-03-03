@@ -1,5 +1,5 @@
 ﻿/* Author: Ben Graham
- * Class: 
+ * Class: TexasTea.cs
  * Purpose: Information about texas tea
  */
 using System;

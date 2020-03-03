@@ -1,5 +1,5 @@
 ﻿/* Author: Ben Graham
- * Class: 
+ * Class: Water.cs
  * Purpose: Information about water
  */
 using System;

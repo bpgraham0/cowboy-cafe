@@ -1,4 +1,8 @@
-﻿using System;
+﻿/* Author: Ben Graham
+ * Class: App.xaml.cs
+ * Purpose: holds app application
+ */
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;

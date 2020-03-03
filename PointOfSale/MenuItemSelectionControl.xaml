@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="PointOfSale.MenuItemSelectionControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PointOfSale"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="600">
+    
+        <Grid Background="Gray">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40*"/>
+                <ColumnDefinition Width="40*"/>
+                <ColumnDefinition Width="40*"/>
+ 
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Row="1" Margin="1,1,1,1">
+            <TextBlock TextAlignment="Center" Height="40"  Background="White" FontSize="18" FontWeight="Bold" Margin="1,1,1,1">Entrees</TextBlock>
+            <Button Name="AddAngryChicken" Height="50
+                    " Click="AddAngryChicken_Click" Margin="1,1,1,1">Angry Chicken</Button>
+            <Button Name="AddRustlersRibs" Height="50" Click="AddRustlersRibs_Click" Margin="1,1,1,1" >Rustler's Ribs</Button>
+            <Button Name="AddCowpokeChili" Height="50" Click="AddCowpokeChili_Click" Margin="1,1,1,1">Cowpoke Chili</Button>
+            <Button Name="PecosPulledPork" Height="50" Click="PecosPulledPork_Click" Margin="1,1,1,1">Pecos Pulled Pork</Button>
+            <Button Name="AddTrailBurger" Height="50" Click="AddTrailBurger_Click" Margin="1,1,1,1">Trail Burger</Button>
+            <Button Name="AddDakotaDoubleBurger" Height="50" Click="AddDakotaDoubleBurger_Click" Margin="1,1,1,1">Dakota Double Burger</Button>
+            <Button Name="AddTexasTripleBurger" Height="50" Click="AddTexasTripleBurger_Click" Margin="1,1,1,1">Texas Triple Burger</Button>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="1" Margin="1,1,1,1">
+            <TextBlock TextAlignment="Center" Height="40"  Background="White" FontSize="18" FontWeight="Bold" Margin="1,1,1,1">Sides</TextBlock>
+            <Button Name ="AddPanDeCampo" Height="87.5" Click="AddPanDeCampo_Click" Margin="1,1,1,1">PanDeCampo</Button>
+            <Button Name ="AddCornDodgers" Height="87.5" Click="AddCornDodgers_Click" Margin="1,1,1,1">CornDodgers</Button>
+            <Button Name ="AddChiliCheeseFries" Height="87.5" Click="AddChiliCheeseFries_Click" Margin="1,1,1,1">ChiliCheeseFries</Button>
+            <Button Name ="AddBakedBeans" Height="87.5" Margin="1,1,1,1" Click="AddBakedBeans_Click">BakedBeans</Button>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="2" Margin="1,1,1,1">
+            <TextBlock TextAlignment="Center" Height="40" Background="White" FontSize="18" FontWeight="Bold" Margin="1,1,1,1">Drinks</TextBlock>
+            <Button Name ="AddJerkedSoda" Height="87.5" Click="AddJerkedSoda_Click" Margin="1,1,1,1">Jerked Soda</Button>
+            <Button Name ="AddTexasTea" Height="87.5" Click="AddTexasTea_Click" Margin="1,1,1,1">Texas Tea</Button>
+            <Button Name ="AddCowboyCoffee" Height="87.5" Click="AddCowboyCoffee_Click" Margin="1,1,1,1">Cowboy Coffee</Button>
+            <Button Name ="AddWater" Height="87.5" Click="AddWater_Click" Margin="1,1,1,1">Water</Button>
+        </StackPanel>
+    </Grid>
+</UserControl>
