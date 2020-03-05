@@ -5,14 +5,20 @@
  */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
     /// A class representing the Cowpoke Chili entree
     /// </summary>
-    public class CowpokeChili : Entree
+    public class CowpokeChili : Entree, INotifyPropertyChanged
     {
+        /// <summary>
+        /// The property changed event
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
         private bool cheese = true;
         /// <summary>
         /// If the chili is topped with cheese
@@ -20,7 +26,12 @@ namespace CowboyCafe.Data
         public bool Cheese
         {
             get { return cheese; }
-            set { cheese = value; }
+            set { 
+                cheese = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Cheese"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+
+            }
         }
 
         private bool sourCream = true;
@@ -30,7 +41,12 @@ namespace CowboyCafe.Data
         public bool SourCream
         {
             get { return sourCream; }
-            set { sourCream = value; }
+            set { 
+                sourCream = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SourCream"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+
+            }
         }
 
         private bool greenOnions = true;
@@ -40,7 +56,11 @@ namespace CowboyCafe.Data
         public bool GreenOnions
         {
             get { return greenOnions; }
-            set { greenOnions = value; }
+            set { 
+                greenOnions = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("GreenOnions"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
         }
 
         private bool tortillaStrips = true;
@@ -50,7 +70,11 @@ namespace CowboyCafe.Data
         public bool TortillaStrips 
         { 
             get { return tortillaStrips; }
-            set { tortillaStrips = value; }
+            set { 
+                tortillaStrips = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("TortillaStrips"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
         }
 
         /// <summary>

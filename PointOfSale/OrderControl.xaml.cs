@@ -40,7 +40,7 @@ namespace PointOfSale
         /// <param name="e">argument</param>
         private void ItemSelection_Click(object sender, RoutedEventArgs e)
         {
-
+            Container.Child = new MenuItemSelectionControl();
         }
 
         /// <summary>
@@ -67,5 +67,11 @@ namespace PointOfSale
 
         //<ListBox x:Name="OrderListView" Background="White" ScrollViewer.VerticalScrollBarVisibility="Visible" HorizontalAlignment="Right" ScrollViewer.CanContentScroll="True" Height="396" Width="193" Margin="1,1,1,1"/>
 
-    }
+
+
+        public void SwapScreen(FrameworkElement element)
+        {
+            Container.Child = element;
+        }
+    } 
 }

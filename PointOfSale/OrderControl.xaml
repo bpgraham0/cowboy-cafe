@@ -31,7 +31,9 @@
             <Button Name="CancelOrder" Height="50" Width="185" Margin="1,1,1,1" Click="CancelOrder_Click">Cancel Order</Button>
             <Button Name="CompleteOrder" Height="50" Width="185" Margin="1,1,1,1" Click="CompleteOrder_Click">Complete Order</Button>
         </StackPanel>
-        <local:MenuItemSelectionControl Grid.Row="1" Grid.ColumnSpan="3"/>
+        <Border Name="Container" Grid.Row="1" Grid.ColumnSpan="3">
+            <local:MenuItemSelectionControl />
+        </Border>
         <local:OrderSummaryControl Grid.RowSpan="2" Grid.Column="3"/>
 
     </Grid>

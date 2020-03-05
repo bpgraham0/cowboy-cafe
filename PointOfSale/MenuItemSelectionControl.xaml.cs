@@ -15,6 +15,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CowboyCafe.Data;
+using PointOfSale.CustomizationScreens;
+using PointOfSale.ExtensionMethods;
+using System.Linq;
 
 namespace PointOfSale
 {
@@ -37,9 +40,15 @@ namespace PointOfSale
         private void AddAngryChicken_Click(object sender, RoutedEventArgs e)
         {
             //OrderListView.Items.Add(new AngryChicken());
-            if (DataContext is Order data)
+            var orderControl = this.FindAncestor<OrderControl>();
+
+            if (DataContext is Order order)
             {
-                data.Add(new AngryChicken());
+                var item = new AngryChicken();
+                var screen = new AngryChickenCustomization();
+                screen.DataContext = item;
+                order.Add(item);
+                orderControl?.SwapScreen(new AngryChickenCustomization());
             }
         }
 
@@ -51,10 +60,16 @@ namespace PointOfSale
         private void AddCowpokeChili_Click(object sender, RoutedEventArgs e)
         {
             //OrderListView.Items.Add(new CowpokeChili());
-            if (DataContext is Order data)
+            var orderControl = this.FindAncestor<OrderControl>();
+            var item = new CowpokeChili();
+            var screen = new CowpokeChiliCustomization();
+            screen.DataContext = item;
+            if (DataContext is Order order)
             {
-                data.Add(new CowpokeChili());
+                order.Add(item);
             }
+            orderControl?.SwapScreen(screen);
+
         }
 
         /// <summary>
@@ -65,9 +80,13 @@ namespace PointOfSale
         private void AddRustlersRibs_Click(object sender, RoutedEventArgs e)
         {
             //OrderListView.Items.Add(new RustlersRibs());
-            if (DataContext is Order data)
+            var orderControl = this.FindAncestor<OrderControl>();
+
+            if (DataContext is Order order)
             {
-                data.Add(new RustlersRibs());
+                var item = new CowpokeChili();
+                order.Add(item);
+                orderControl?.SwapScreen(new CowpokeChiliCustomization());
             }
 
         }
@@ -80,9 +99,13 @@ namespace PointOfSale
         private void PecosPulledPork_Click(object sender, RoutedEventArgs e)
         {
             //OrderListView.Items.Add(new PecosPulledPork());
-            if (DataContext is Order data)
+            var orderControl = this.FindAncestor<OrderControl>();
+
+            if (DataContext is Order order)
             {
-                data.Add(new PecosPulledPork());
+                var item = new CowpokeChili();
+                order.Add(item);
+                orderControl?.SwapScreen(new CowpokeChiliCustomization());
             }
 
         }
@@ -95,9 +118,13 @@ namespace PointOfSale
         private void AddTrailBurger_Click(object sender, RoutedEventArgs e)
         {
             //OrderListView.Items.Add(new TrailBurger());
-            if (DataContext is Order data)
+            var orderControl = this.FindAncestor<OrderControl>();
+
+            if (DataContext is Order order)
             {
-                data.Add(new TrailBurger());
+                var item = new CowpokeChili();
+                order.Add(item);
+                orderControl?.SwapScreen(new CowpokeChiliCustomization());
             }
 
         }
@@ -110,9 +137,13 @@ namespace PointOfSale
         private void AddDakotaDoubleBurger_Click(object sender, RoutedEventArgs e)
         {
             //OrderListView.Items.Add(new DakotaDoubleBurger());
-            if (DataContext is Order data)
+            var orderControl = this.FindAncestor<OrderControl>();
+
+            if (DataContext is Order order)
             {
-                data.Add(new DakotaDoubleBurger());
+                var item = new CowpokeChili();
+                order.Add(item);
+                orderControl?.SwapScreen(new CowpokeChiliCustomization());
             }
 
         }
@@ -125,9 +156,13 @@ namespace PointOfSale
         private void AddTexasTripleBurger_Click(object sender, RoutedEventArgs e)
         {
             //OrderListView.Items.Add(new TexasTripleBurger());
-            if (DataContext is Order data)
+            var orderControl = this.FindAncestor<OrderControl>();
+
+            if (DataContext is Order order)
             {
-                data.Add(new TexasTripleBurger());
+                var item = new CowpokeChili();
+                order.Add(item);
+                orderControl?.SwapScreen(new CowpokeChiliCustomization());
             }
 
         }
@@ -140,9 +175,13 @@ namespace PointOfSale
         private void AddPanDeCampo_Click(object sender, RoutedEventArgs e)
         {
             //OrderListView.Items.Add(new PanDeCampo());
-            if (DataContext is Order data)
+            var orderControl = this.FindAncestor<OrderControl>();
+
+            if (DataContext is Order order)
             {
-                data.Add(new PanDeCampo());
+                var item = new CowpokeChili();
+                order.Add(item);
+                orderControl?.SwapScreen(new CowpokeChiliCustomization());
             }
 
         }
@@ -155,9 +194,13 @@ namespace PointOfSale
         private void AddCornDodgers_Click(object sender, RoutedEventArgs e)
         {
             //OrderListView.Items.Add(new CornDodgers());
-            if (DataContext is Order data)
+            var orderControl = this.FindAncestor<OrderControl>();
+
+            if (DataContext is Order order)
             {
-                data.Add(new CornDodgers());
+                var item = new CowpokeChili();
+                order.Add(item);
+                orderControl?.SwapScreen(new CowpokeChiliCustomization());
             }
 
         }
@@ -170,9 +213,13 @@ namespace PointOfSale
         private void AddChiliCheeseFries_Click(object sender, RoutedEventArgs e)
         {
             //OrderListView.Items.Add(new ChiliCheeseFries());
-            if (DataContext is Order data)
+            var orderControl = this.FindAncestor<OrderControl>();
+
+            if (DataContext is Order order)
             {
-                data.Add(new ChiliCheeseFries());
+                var item = new CowpokeChili();
+                order.Add(item);
+                orderControl?.SwapScreen(new CowpokeChiliCustomization());
             }
 
         }
@@ -185,9 +232,13 @@ namespace PointOfSale
         private void AddJerkedSoda_Click(object sender, RoutedEventArgs e)
         {
             //OrderListView.Items.Add(new JerkedSoda());
-            if (DataContext is Order data)
+            var orderControl = this.FindAncestor<OrderControl>();
+
+            if (DataContext is Order order)
             {
-                data.Add(new JerkedSoda());
+                var item = new CowpokeChili();
+                order.Add(item);
+                orderControl?.SwapScreen(new CowpokeChiliCustomization());
             }
 
         }
@@ -200,9 +251,13 @@ namespace PointOfSale
         private void AddTexasTea_Click(object sender, RoutedEventArgs e)
         {
             //OrderListView.Items.Add(new TexasTea());
-            if (DataContext is Order data)
+            var orderControl = this.FindAncestor<OrderControl>();
+
+            if (DataContext is Order order)
             {
-                data.Add(new TexasTea());
+                var item = new CowpokeChili();
+                order.Add(item);
+                orderControl?.SwapScreen(new CowpokeChiliCustomization());
             }
 
         }
@@ -215,9 +270,13 @@ namespace PointOfSale
         private void AddCowboyCoffee_Click(object sender, RoutedEventArgs e)
         {
             //OrderListView.Items.Add(new CowboyCoffee());
-            if (DataContext is Order data)
+            var orderControl = this.FindAncestor<OrderControl>();
+
+            if (DataContext is Order order)
             {
-                data.Add(new CowboyCoffee());
+                var item = new CowpokeChili();
+                order.Add(item);
+                orderControl?.SwapScreen(new CowpokeChiliCustomization());
             }
 
         }
@@ -230,9 +289,13 @@ namespace PointOfSale
         private void AddWater_Click(object sender, RoutedEventArgs e)
         {
             //OrderListView.Items.Add(new Water());
-            if (DataContext is Order data)
+            var orderControl = this.FindAncestor<OrderControl>();
+
+            if (DataContext is Order order)
             {
-                data.Add(new Water());
+                var item = new CowpokeChili();
+                order.Add(item);
+                orderControl?.SwapScreen(new CowpokeChiliCustomization());
             }
 
         }
@@ -245,9 +308,13 @@ namespace PointOfSale
         private void AddBakedBeans_Click(object sender, RoutedEventArgs e)
         {
             //OrderListView.Items.Add(new Water());
-            if (DataContext is Order data)
+            var orderControl = this.FindAncestor<OrderControl>();
+
+            if (DataContext is Order order)
             {
-                data.Add(new BakedBeans());
+                var item = new CowpokeChili();
+                order.Add(item);
+                orderControl?.SwapScreen(new CowpokeChiliCustomization());
             }
         }
     }

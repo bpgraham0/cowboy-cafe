@@ -26,7 +26,7 @@
                                 <RowDefinition/>
                             </Grid.RowDefinitions>
                             <TextBlock Grid.Column="0" Name="Item" Text="{Binding}" />
-                            <ListBox Grid.Column="0" Grid.Row="1" BorderBrush="White" Name="SpecialIntructions" ItemsSource="{Binding Path=SpecialInstructions}"/>
+                            <ListView Grid.Column="0" Grid.Row="1" BorderBrush="White" Name="SpecialIntructions" ItemsSource="{Binding Path=SpecialInstructions}"/>
                             <TextBlock Grid.Column="1" HorizontalAlignment="Right" Text="|"/>
                             <TextBlock Grid.Column="2" Name="Price" HorizontalAlignment="Right" Text="{Binding Path=Price, StringFormat=c}" FontWeight="Bold"/>
 
