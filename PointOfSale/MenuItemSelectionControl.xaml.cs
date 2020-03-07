@@ -41,15 +41,14 @@ namespace PointOfSale
         {
             //OrderListView.Items.Add(new AngryChicken());
             var orderControl = this.FindAncestor<OrderControl>();
-
+            var item = new AngryChicken();
+            var screen = new AngryChickenCustomization();
+            screen.DataContext = item;
             if (DataContext is Order order)
             {
-                var item = new AngryChicken();
-                var screen = new AngryChickenCustomization();
-                screen.DataContext = item;
                 order.Add(item);
-                orderControl?.SwapScreen(new AngryChickenCustomization());
             }
+            orderControl?.SwapScreen(screen);
         }
 
         /// <summary>
@@ -81,13 +80,14 @@ namespace PointOfSale
         {
             //OrderListView.Items.Add(new RustlersRibs());
             var orderControl = this.FindAncestor<OrderControl>();
-
+            var item = new RustlersRibs();
+            var screen = new RustlersRibsCustomization();
+            screen.DataContext = item;
             if (DataContext is Order order)
             {
-                var item = new CowpokeChili();
                 order.Add(item);
-                orderControl?.SwapScreen(new CowpokeChiliCustomization());
             }
+            orderControl?.SwapScreen(screen);
 
         }
 
@@ -100,13 +100,14 @@ namespace PointOfSale
         {
             //OrderListView.Items.Add(new PecosPulledPork());
             var orderControl = this.FindAncestor<OrderControl>();
-
+            var item = new PecosPulledPork();
+            var screen = new PecosPulledPorkCustomization();
+            screen.DataContext = item;
             if (DataContext is Order order)
             {
-                var item = new CowpokeChili();
                 order.Add(item);
-                orderControl?.SwapScreen(new CowpokeChiliCustomization());
             }
+            orderControl?.SwapScreen(screen);
 
         }
 
@@ -119,13 +120,14 @@ namespace PointOfSale
         {
             //OrderListView.Items.Add(new TrailBurger());
             var orderControl = this.FindAncestor<OrderControl>();
-
+            var item = new TrailBurger();
+            var screen = new TrailBurgerCustomization();
+            screen.DataContext = item;
             if (DataContext is Order order)
             {
-                var item = new CowpokeChili();
                 order.Add(item);
-                orderControl?.SwapScreen(new CowpokeChiliCustomization());
             }
+            orderControl?.SwapScreen(screen);
 
         }
 
@@ -138,13 +140,14 @@ namespace PointOfSale
         {
             //OrderListView.Items.Add(new DakotaDoubleBurger());
             var orderControl = this.FindAncestor<OrderControl>();
-
+            var item = new DakotaDoubleBurger();
+            var screen = new DakotaDoubleBurgerCustomization();
+            screen.DataContext = item;
             if (DataContext is Order order)
             {
-                var item = new CowpokeChili();
                 order.Add(item);
-                orderControl?.SwapScreen(new CowpokeChiliCustomization());
             }
+            orderControl?.SwapScreen(screen);
 
         }
 
@@ -157,13 +160,14 @@ namespace PointOfSale
         {
             //OrderListView.Items.Add(new TexasTripleBurger());
             var orderControl = this.FindAncestor<OrderControl>();
-
+            var item = new TexasTripleBurger();
+            var screen = new TexasTripleBurgerCustomization();
+            screen.DataContext = item;
             if (DataContext is Order order)
             {
-                var item = new CowpokeChili();
                 order.Add(item);
-                orderControl?.SwapScreen(new CowpokeChiliCustomization());
             }
+            orderControl?.SwapScreen(screen);
 
         }
 
@@ -176,13 +180,14 @@ namespace PointOfSale
         {
             //OrderListView.Items.Add(new PanDeCampo());
             var orderControl = this.FindAncestor<OrderControl>();
-
+            var item = new CowpokeChili();
+            var screen = new CowpokeChiliCustomization();
+            screen.DataContext = item;
             if (DataContext is Order order)
             {
-                var item = new CowpokeChili();
                 order.Add(item);
-                orderControl?.SwapScreen(new CowpokeChiliCustomization());
             }
+            orderControl?.SwapScreen(screen);
 
         }
 
@@ -195,13 +200,14 @@ namespace PointOfSale
         {
             //OrderListView.Items.Add(new CornDodgers());
             var orderControl = this.FindAncestor<OrderControl>();
-
+            var item = new CowpokeChili();
+            var screen = new CowpokeChiliCustomization();
+            screen.DataContext = item;
             if (DataContext is Order order)
             {
-                var item = new CowpokeChili();
                 order.Add(item);
-                orderControl?.SwapScreen(new CowpokeChiliCustomization());
             }
+            orderControl?.SwapScreen(screen);
 
         }
 
@@ -214,89 +220,14 @@ namespace PointOfSale
         {
             //OrderListView.Items.Add(new ChiliCheeseFries());
             var orderControl = this.FindAncestor<OrderControl>();
-
+            var item = new CowpokeChili();
+            var screen = new CowpokeChiliCustomization();
+            screen.DataContext = item;
             if (DataContext is Order order)
             {
-                var item = new CowpokeChili();
                 order.Add(item);
-                orderControl?.SwapScreen(new CowpokeChiliCustomization());
             }
-
-        }
-
-        /// <summary>
-        /// Adds item to OrderList upon clicking
-        /// </summary>
-        /// <param name="sender">button</param>
-        /// <param name="e">arument</param>
-        private void AddJerkedSoda_Click(object sender, RoutedEventArgs e)
-        {
-            //OrderListView.Items.Add(new JerkedSoda());
-            var orderControl = this.FindAncestor<OrderControl>();
-
-            if (DataContext is Order order)
-            {
-                var item = new CowpokeChili();
-                order.Add(item);
-                orderControl?.SwapScreen(new CowpokeChiliCustomization());
-            }
-
-        }
-
-        /// <summary>
-        /// Adds item to OrderList upon clicking
-        /// </summary>
-        /// <param name="sender">button</param>
-        /// <param name="e">arument</param>
-        private void AddTexasTea_Click(object sender, RoutedEventArgs e)
-        {
-            //OrderListView.Items.Add(new TexasTea());
-            var orderControl = this.FindAncestor<OrderControl>();
-
-            if (DataContext is Order order)
-            {
-                var item = new CowpokeChili();
-                order.Add(item);
-                orderControl?.SwapScreen(new CowpokeChiliCustomization());
-            }
-
-        }
-
-        /// <summary>
-        /// Adds item to OrderList upon clicking
-        /// </summary>
-        /// <param name="sender">button</param>
-        /// <param name="e">arument</param>
-        private void AddCowboyCoffee_Click(object sender, RoutedEventArgs e)
-        {
-            //OrderListView.Items.Add(new CowboyCoffee());
-            var orderControl = this.FindAncestor<OrderControl>();
-
-            if (DataContext is Order order)
-            {
-                var item = new CowpokeChili();
-                order.Add(item);
-                orderControl?.SwapScreen(new CowpokeChiliCustomization());
-            }
-
-        }
-
-        /// <summary>
-        /// Adds item to OrderList upon clicking
-        /// </summary>
-        /// <param name="sender">button</param>
-        /// <param name="e">arument</param>
-        private void AddWater_Click(object sender, RoutedEventArgs e)
-        {
-            //OrderListView.Items.Add(new Water());
-            var orderControl = this.FindAncestor<OrderControl>();
-
-            if (DataContext is Order order)
-            {
-                var item = new CowpokeChili();
-                order.Add(item);
-                orderControl?.SwapScreen(new CowpokeChiliCustomization());
-            }
+            orderControl?.SwapScreen(screen);
 
         }
 
@@ -309,13 +240,96 @@ namespace PointOfSale
         {
             //OrderListView.Items.Add(new Water());
             var orderControl = this.FindAncestor<OrderControl>();
-
+            var item = new CowpokeChili();
+            var screen = new CowpokeChiliCustomization();
+            screen.DataContext = item;
             if (DataContext is Order order)
             {
-                var item = new CowpokeChili();
                 order.Add(item);
-                orderControl?.SwapScreen(new CowpokeChiliCustomization());
             }
+            orderControl?.SwapScreen(screen);
         }
+
+        /// <summary>
+        /// Adds item to OrderList upon clicking
+        /// </summary>
+        /// <param name="sender">button</param>
+        /// <param name="e">arument</param>
+        private void AddJerkedSoda_Click(object sender, RoutedEventArgs e)
+        {
+            //OrderListView.Items.Add(new JerkedSoda());
+            var orderControl = this.FindAncestor<OrderControl>();
+            var item = new CowpokeChili();
+            var screen = new CowpokeChiliCustomization();
+            screen.DataContext = item;
+            if (DataContext is Order order)
+            {
+                order.Add(item);
+            }
+            orderControl?.SwapScreen(screen);
+
+        }
+
+        /// <summary>
+        /// Adds item to OrderList upon clicking
+        /// </summary>
+        /// <param name="sender">button</param>
+        /// <param name="e">arument</param>
+        private void AddTexasTea_Click(object sender, RoutedEventArgs e)
+        {
+            //OrderListView.Items.Add(new TexasTea());
+            var orderControl = this.FindAncestor<OrderControl>();
+            var item = new CowpokeChili();
+            var screen = new CowpokeChiliCustomization();
+            screen.DataContext = item;
+            if (DataContext is Order order)
+            {
+                order.Add(item);
+            }
+            orderControl?.SwapScreen(screen);
+
+        }
+
+        /// <summary>
+        /// Adds item to OrderList upon clicking
+        /// </summary>
+        /// <param name="sender">button</param>
+        /// <param name="e">arument</param>
+        private void AddCowboyCoffee_Click(object sender, RoutedEventArgs e)
+        {
+            //OrderListView.Items.Add(new CowboyCoffee());
+            var orderControl = this.FindAncestor<OrderControl>();
+            var item = new CowpokeChili();
+            var screen = new CowpokeChiliCustomization();
+            screen.DataContext = item;
+            if (DataContext is Order order)
+            {
+                order.Add(item);
+            }
+            orderControl?.SwapScreen(screen);
+
+        }
+
+        /// <summary>
+        /// Adds item to OrderList upon clicking
+        /// </summary>
+        /// <param name="sender">button</param>
+        /// <param name="e">arument</param>
+        private void AddWater_Click(object sender, RoutedEventArgs e)
+        {
+            //OrderListView.Items.Add(new Water());
+            var orderControl = this.FindAncestor<OrderControl>();
+            var item = new CowpokeChili();
+            var screen = new CowpokeChiliCustomization();
+            screen.DataContext = item;
+            if (DataContext is Order order)
+            {
+                order.Add(item);
+            }
+            orderControl?.SwapScreen(screen);
+
+        }
+
+        
     }
 }
