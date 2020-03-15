@@ -22,7 +22,11 @@ namespace PointOfSale.CustomizationScreens
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// changes size property when clicked
+        /// </summary>
+        /// <param name="sender">button</param>
+        /// <param name="e">argument</param>
         private void SmallSize_Click(object sender, RoutedEventArgs e)
         {
             if (DataContext is JerkedSoda data)
@@ -37,7 +41,11 @@ namespace PointOfSale.CustomizationScreens
                 }
             }
         }
-
+        /// <summary>
+        /// changes size property when clicked
+        /// </summary>
+        /// <param name="sender">button</param>
+        /// <param name="e">argument</param>
         private void MediumSize_Click(object sender, RoutedEventArgs e)
         {
             if (DataContext is JerkedSoda data)
@@ -51,7 +59,11 @@ namespace PointOfSale.CustomizationScreens
                 }
             }
         }
-
+        /// <summary>
+        /// changes size property when clicked
+        /// </summary>
+        /// <param name="sender">button</param>
+        /// <param name="e">argument</param>
         private void LargeSize_Click(object sender, RoutedEventArgs e)
         {
             if (DataContext is JerkedSoda data)
@@ -65,7 +77,11 @@ namespace PointOfSale.CustomizationScreens
                 }
             }
         }
-
+        /// <summary>
+        /// changes flavor property when clicked
+        /// </summary>
+        /// <param name="sender">button</param>
+        /// <param name="e">argument</param>
         private void CreamSoda_Click(object sender, RoutedEventArgs e)
         {
             if (DataContext is JerkedSoda data)
@@ -74,15 +90,19 @@ namespace PointOfSale.CustomizationScreens
                 {
                     data.Flavor = CowboyCafe.Data.SodaFlavor.CreamSoda;
 
-                    CreamSoda.Background = Brushes.White;
-                    OrangeSoda.Background = Brushes.LightBlue;
+                    CreamSoda.Background = Brushes.LightBlue;
+                    OrangeSoda.Background = Brushes.White;
                     RootBeer.Background = Brushes.White;
                     BirchBeer.Background = Brushes.White;
                     Sarsparilla.Background = Brushes.White;
                 }
             }
         }
-
+        /// <summary>
+        /// changes flavor property when clicked
+        /// </summary>
+        /// <param name="sender">button</param>
+        /// <param name="e">argument</param>
         private void OrangeSoda_Click(object sender, RoutedEventArgs e)
         {
             if (DataContext is JerkedSoda data)
@@ -92,13 +112,18 @@ namespace PointOfSale.CustomizationScreens
                     data.Flavor = CowboyCafe.Data.SodaFlavor.OrangeSoda;
 
                     CreamSoda.Background = Brushes.White;
-                    OrangeSoda.Background = Brushes.White;
-                    RootBeer.Background = Brushes.LightBlue;
+                    OrangeSoda.Background = Brushes.LightBlue;
+                    RootBeer.Background = Brushes.White;
                     BirchBeer.Background = Brushes.White;
                     Sarsparilla.Background = Brushes.White;
                 }
             }
         }
+        /// <summary>
+        /// changes flavor property when clicked
+        /// </summary>
+        /// <param name="sender">button</param>
+        /// <param name="e">argument</param>
         private void RootBeer_Click(object sender, RoutedEventArgs e)
         {
             if (DataContext is JerkedSoda data)
@@ -115,7 +140,11 @@ namespace PointOfSale.CustomizationScreens
                 }
             }
         }
-
+        /// <summary>
+        /// changes flavor property when clicked
+        /// </summary>
+        /// <param name="sender">button</param>
+        /// <param name="e">argument</param>
         private void BirchBeer_Click(object sender, RoutedEventArgs e)
         {
             if (DataContext is JerkedSoda data)
@@ -132,7 +161,11 @@ namespace PointOfSale.CustomizationScreens
                 }
             }
         }
-
+        /// <summary>
+        /// changes flavor property when clicked
+        /// </summary>
+        /// <param name="sender">button</param>
+        /// <param name="e">argument</param>
         private void Sarsparilla_Click(object sender, RoutedEventArgs e)
         {
             if (DataContext is JerkedSoda data)

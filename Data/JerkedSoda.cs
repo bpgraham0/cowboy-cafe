@@ -9,7 +9,7 @@ using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
-    public class JerkedSoda : Drink
+    public class JerkedSoda : Drink, INotifyPropertyChanged 
     {
         public event PropertyChangedEventHandler PropertyChanged;
 

@@ -23,6 +23,11 @@ namespace PointOfSale.CustomizationScreens
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// changes size property when clicked
+        /// </summary>
+        /// <param name="sender">button</param>
+        /// <param name="e">argument</param>
         private void SmallSize_Click(object sender, RoutedEventArgs e)
         {
             if (DataContext is Water data)
@@ -39,7 +44,11 @@ namespace PointOfSale.CustomizationScreens
                 }
             }
         }
-
+        /// <summary>
+        /// changes size property when clicked
+        /// </summary>
+        /// <param name="sender">button</param>
+        /// <param name="e">argument</param>
         private void MediumSize_Click(object sender, RoutedEventArgs e)
         {
             if (DataContext is Water data)
@@ -53,7 +62,11 @@ namespace PointOfSale.CustomizationScreens
                 }
             }
         }
-
+        /// <summary>
+        /// changes size property when clicked
+        /// </summary>
+        /// <param name="sender">button</param>
+        /// <param name="e">argument</param>
         private void LargeSize_Click(object sender, RoutedEventArgs e)
         {
             if (DataContext is Water data)

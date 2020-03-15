@@ -9,6 +9,12 @@
     <Grid>
         <StackPanel>
             <TextBlock FontSize="34">Customize these Corn Dodgers</TextBlock>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock VerticalAlignment="Center" FontSize="16">Size:</TextBlock>
+                <Button Width="60" Height="30" Name="SmallSize" Margin="2,2,2,2" Click="SmallSize_Click">Small</Button>
+                <Button Width="60" Height="30" Name="MediumSize" Margin="2,2,2,2" Click="MediumSize_Click">Medium</Button>
+                <Button Width="60" Height="30" Name="LargeSize" Margin="2,2,2,2" Click="LargeSize_Click">Large</Button>
+            </StackPanel>
         </StackPanel>
     </Grid>
 </UserControl>

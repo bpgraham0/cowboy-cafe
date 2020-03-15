@@ -94,7 +94,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// private backing for ice
         /// </summary>
-        private bool ice;
+        private bool ice = true;
         /// <summary>
         /// ice info
         /// </summary>

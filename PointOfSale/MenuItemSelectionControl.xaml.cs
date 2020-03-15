@@ -180,8 +180,8 @@ namespace PointOfSale
         {
             //OrderListView.Items.Add(new PanDeCampo());
             var orderControl = this.FindAncestor<OrderControl>();
-            var item = new CowpokeChili();
-            var screen = new CowpokeChiliCustomization();
+            var item = new PanDeCampo();
+            var screen = new PanDeCampoCustomization();
             screen.DataContext = item;
             if (DataContext is Order order)
             {
@@ -200,8 +200,8 @@ namespace PointOfSale
         {
             //OrderListView.Items.Add(new CornDodgers());
             var orderControl = this.FindAncestor<OrderControl>();
-            var item = new CowpokeChili();
-            var screen = new CowpokeChiliCustomization();
+            var item = new CornDodgers();
+            var screen = new CornDodgersCustomization();
             screen.DataContext = item;
             if (DataContext is Order order)
             {
@@ -220,8 +220,8 @@ namespace PointOfSale
         {
             //OrderListView.Items.Add(new ChiliCheeseFries());
             var orderControl = this.FindAncestor<OrderControl>();
-            var item = new CowpokeChili();
-            var screen = new CowpokeChiliCustomization();
+            var item = new ChiliCheeseFries();
+            var screen = new ChiliCheeseFriesCustomization();
             screen.DataContext = item;
             if (DataContext is Order order)
             {
@@ -259,8 +259,8 @@ namespace PointOfSale
         {
             //OrderListView.Items.Add(new JerkedSoda());
             var orderControl = this.FindAncestor<OrderControl>();
-            var item = new CowpokeChili();
-            var screen = new CowpokeChiliCustomization();
+            var item = new JerkedSoda();
+            var screen = new JerkedSodaCustomization();
             screen.DataContext = item;
             if (DataContext is Order order)
             {
@@ -299,8 +299,8 @@ namespace PointOfSale
         {
             //OrderListView.Items.Add(new CowboyCoffee());
             var orderControl = this.FindAncestor<OrderControl>();
-            var item = new CowpokeChili();
-            var screen = new CowpokeChiliCustomization();
+            var item = new CowboyCoffee();
+            var screen = new CowboyCoffeeCustomization();
             screen.DataContext = item;
             if (DataContext is Order order)
             {
@@ -319,8 +319,8 @@ namespace PointOfSale
         {
             //OrderListView.Items.Add(new Water());
             var orderControl = this.FindAncestor<OrderControl>();
-            var item = new CowpokeChili();
-            var screen = new CowpokeChiliCustomization();
+            var item = new Water();
+            var screen = new WaterCustomization();
             screen.DataContext = item;
             if (DataContext is Order order)
             {
