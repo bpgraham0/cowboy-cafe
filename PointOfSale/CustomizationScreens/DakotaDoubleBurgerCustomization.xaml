@@ -9,14 +9,14 @@
     <Grid>
         <StackPanel>
             <TextBlock FontSize="34">Customize this Dakota Double Burger</TextBlock>
-            <CheckBox IsChecked="{Binding Path=Bun}">Bun</CheckBox>
-            <CheckBox IsChecked="{Binding Path=Ketchup}">Ketchup</CheckBox>
-            <CheckBox IsChecked="{Binding Path=Mustard}">Mustard</CheckBox>
-            <CheckBox IsChecked="{Binding Path=Pickle}">Pickle</CheckBox>
-            <CheckBox IsChecked="{Binding Path=Cheese}">Cheese</CheckBox>
-            <CheckBox IsChecked="{Binding Path=Tomato}">Tomato</CheckBox>
-            <CheckBox IsChecked="{Binding Path=Lettuce}">Lettuce</CheckBox>
-            <CheckBox IsChecked="{Binding Path=Mayo}">Mayo</CheckBox>
+            <CheckBox VerticalAlignment="Center" VerticalContentAlignment="Center" Height="20" FontSize="14" IsChecked="{Binding Path=Bun}">Bun</CheckBox>
+            <CheckBox VerticalAlignment="Center" VerticalContentAlignment="Center" Height="20" FontSize="14" IsChecked="{Binding Path=Ketchup}">Ketchup</CheckBox>
+            <CheckBox VerticalAlignment="Center" VerticalContentAlignment="Center" Height="20" FontSize="14" IsChecked="{Binding Path=Mustard}">Mustard</CheckBox>
+            <CheckBox VerticalAlignment="Center" VerticalContentAlignment="Center" Height="20" FontSize="14" IsChecked="{Binding Path=Pickle}">Pickle</CheckBox>
+            <CheckBox VerticalAlignment="Center" VerticalContentAlignment="Center" Height="20" FontSize="14" IsChecked="{Binding Path=Cheese}">Cheese</CheckBox>
+            <CheckBox VerticalAlignment="Center" VerticalContentAlignment="Center" Height="20" FontSize="14" IsChecked="{Binding Path=Tomato}">Tomato</CheckBox>
+            <CheckBox VerticalAlignment="Center" VerticalContentAlignment="Center" Height="20" FontSize="14" IsChecked="{Binding Path=Lettuce}">Lettuce</CheckBox>
+            <CheckBox VerticalAlignment="Center" VerticalContentAlignment="Center" Height="20" FontSize="14" IsChecked="{Binding Path=Mayo}">Mayo</CheckBox>
         </StackPanel>
     </Grid>
 </UserControl>

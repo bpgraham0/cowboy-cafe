@@ -13,6 +13,7 @@ namespace CowboyCafe.Data
     /// </summary>
     public abstract class Side : IOrderItem
     {
+
         /// <summary>
         /// Gets the size of the entree
         /// </summary>

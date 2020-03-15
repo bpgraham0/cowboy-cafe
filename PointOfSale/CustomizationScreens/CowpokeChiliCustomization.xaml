@@ -8,10 +8,10 @@
              d:DesignHeight="450" d:DesignWidth="600">
     <StackPanel>
         <TextBlock FontSize="40">Customize this Chili!</TextBlock>
-        <CheckBox IsChecked="{Binding Path=Cheese}">Cheese</CheckBox>
-        <CheckBox IsChecked="{Binding Path=SourCream}">Sour Cream</CheckBox>
-        <CheckBox IsChecked="{Binding Path=GreenOnions}">Green Onions</CheckBox>
-        <CheckBox IsChecked="{Binding Path=TortillaStrips}">Tortilla Strips</CheckBox>
+        <CheckBox VerticalAlignment="Center" VerticalContentAlignment="Center" Height="20" FontSize="14" IsChecked="{Binding Path=Cheese}">Cheese</CheckBox>
+        <CheckBox VerticalAlignment="Center" VerticalContentAlignment="Center" Height="20" FontSize="14" IsChecked="{Binding Path=SourCream}">Sour Cream</CheckBox>
+        <CheckBox VerticalAlignment="Center" VerticalContentAlignment="Center" Height="20" FontSize="14" IsChecked="{Binding Path=GreenOnions}">Green Onions</CheckBox>
+        <CheckBox VerticalAlignment="Center" VerticalContentAlignment="Center" Height="20" FontSize="14" IsChecked="{Binding Path=TortillaStrips}">Tortilla Strips</CheckBox>
 
     </StackPanel>
 </UserControl>

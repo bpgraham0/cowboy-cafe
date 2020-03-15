@@ -5,11 +5,32 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
     public class CowboyCoffee : Drink
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// private backing variable
+        /// </summary>
+        private Size size = Size.Small;
+        /// <summary>
+        /// initalizes size to small
+        /// </summary>
+        public override Size Size
+        {
+            get { return size; }
+            set
+            {
+                size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialIngredients"));
+            }
+        }
+
         /// <summary>
         /// holds price info
         /// </summary>
@@ -53,19 +74,54 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
+        /// private backing variable
+        /// </summary>
+        private bool decaf;
+        /// <summary>
         /// if coffee is decaf
         /// </summary>
-        public bool Decaf { get; set; } = false;
-
+        public bool Decaf {
+            get { return decaf; }
+            set
+            {
+                decaf = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Decaf"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialIngredients"));
+            }
+        }
+        
+        /// <summary>
+        /// private backing variable
+        /// </summary>
+        private bool roomForCream;
         /// <summary>
         /// if coffee has cream
         /// </summary>
-        public bool RoomForCream { get; set; } = false;
-
+        public bool RoomForCream {
+            get { return roomForCream; }
+            set
+            {
+                roomForCream = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("RoomForCream"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialIngredients"));
+            }
+        }
+        /// <summary>
+        /// private backing for ice
+        /// </summary>
+        private bool ice;
         /// <summary>
         /// if coffee has ice
         /// </summary>
-        public override bool Ice { get; set; } = false;
+        public override bool Ice {
+            get { return ice; }
+            set
+            {
+                ice = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialIngredients"));
+            }
+        }
 
         /// <summary>
         /// list of instructions

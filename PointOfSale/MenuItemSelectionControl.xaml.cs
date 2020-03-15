@@ -240,8 +240,8 @@ namespace PointOfSale
         {
             //OrderListView.Items.Add(new Water());
             var orderControl = this.FindAncestor<OrderControl>();
-            var item = new CowpokeChili();
-            var screen = new CowpokeChiliCustomization();
+            var item = new BakedBeans();
+            var screen = new BakedBeansCustomization();
             screen.DataContext = item;
             if (DataContext is Order order)
             {
@@ -279,8 +279,8 @@ namespace PointOfSale
         {
             //OrderListView.Items.Add(new TexasTea());
             var orderControl = this.FindAncestor<OrderControl>();
-            var item = new CowpokeChili();
-            var screen = new CowpokeChiliCustomization();
+            var item = new TexasTea();
+            var screen = new TexasTeaCustomization();
             screen.DataContext = item;
             if (DataContext is Order order)
             {

@@ -51,6 +51,7 @@ namespace PointOfSale
         private void CancelOrder_Click(object sender, RoutedEventArgs e)
         {
             this.DataContext = new Order();
+            Container.Child = new MenuItemSelectionControl();
         }
 
         /// <summary>
@@ -61,6 +62,7 @@ namespace PointOfSale
         private void CompleteOrder_Click(object sender, RoutedEventArgs e)
         {
             this.DataContext = new Order();
+            Container.Child = new MenuItemSelectionControl();
 
         }
 

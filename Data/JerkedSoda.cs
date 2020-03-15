@@ -5,11 +5,32 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
     public class JerkedSoda : Drink
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// private backing variable
+        /// </summary>
+        private Size size = Size.Small;
+        /// <summary>
+        /// initalizes size to small
+        /// </summary>
+        public override Size Size
+        {
+            get { return size; }
+            set
+            {
+                size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialIngredients"));
+            }
+        }
+
         /// <summary>
         /// jerked soda price
         /// </summary>
@@ -51,16 +72,39 @@ namespace CowboyCafe.Data
                 }
             }
         }
-
+        /// <summary>
+        /// private backing for flavor
+        /// </summary>
+        private SodaFlavor flavor;
         /// <summary>
         /// gets flavor from enum class
         /// </summary>
-        public SodaFlavor Flavor { get; set; }
+        public SodaFlavor Flavor
+        {
+            get { return flavor; }
+            set {
+                flavor = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Flavor"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialIngredients"));
+            }
+        }
 
+        /// <summary>
+        /// private backing variable
+        /// </summary>
+        private bool ice = true;
         /// <summary>
         /// hold info on ice
         /// </summary>
-        public override bool Ice { get; set; } = true;
+        public override bool Ice {
+            get { return ice; }
+            set
+            {
+                ice = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialIngredients"));
+            }
+        } 
 
         /// <summary>
         /// info on special instrucitons

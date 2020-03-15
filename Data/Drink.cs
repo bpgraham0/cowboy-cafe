@@ -13,7 +13,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// initalizes size to small
         /// </summary>
-        public Size Size { get; set; } = Size.Small;
+        public virtual Size Size { get; set; } = Size.Small;
 
         /// <summary>
         /// Gets the price of the side

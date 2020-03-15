@@ -5,11 +5,32 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
-    public class TexasTea : Drink
+    public class TexasTea : Drink, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// private backing variable
+        /// </summary>
+        private Size size = Size.Small;
+        /// <summary>
+        /// initalizes size to small
+        /// </summary>
+        public override Size Size
+        {
+            get { return size; }
+            set
+            {
+                size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialIngredients"));
+            }
+        }
+
         /// <summary>
         /// holds price info
         /// </summary>
@@ -71,18 +92,55 @@ namespace CowboyCafe.Data
             }
         }
         /// <summary>
+        /// private backing for ice
+        /// </summary>
+        private bool ice;
+        /// <summary>
         /// ice info
         /// </summary>
-        public override bool Ice { get; set; } = true;
+        public override bool Ice {
+            get { return ice; }
+            set
+            {
+                ice = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialIngredients"));
+            }
+        }
+
+        /// <summary>
+        /// private backing for sweet
+        /// </summary>
+        private bool sweet = true;
         /// <summary>
         /// holds sweet info
         /// </summary>
-        public bool Sweet { get; set; } = true;
+        public bool Sweet {
+            get { return sweet; }
+            set
+            {
+                sweet = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Sweet"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialIngredients"));
+            }
+        }
 
+        /// <summary>
+        /// private backing variable
+        /// </summary>
+        private bool lemon;
         /// <summary>
         /// whether tea has lemon or not
         /// </summary>
-        public bool Lemon { get; set; } = false;
+        public bool Lemon {
+            get { return lemon; }
+            set
+            {
+                lemon = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Lemon"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialIngredients"));
+            }
+        }
 
         /// <summary>
         /// list of instructions

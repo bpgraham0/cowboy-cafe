@@ -9,8 +9,8 @@
     <Grid>
         <StackPanel>
             <TextBlock FontSize="40">Customize this Chicken!</TextBlock>
-            <CheckBox IsChecked="{Binding Path=Bread}">Bread</CheckBox>
-            <CheckBox IsChecked="{Binding Path=Pickle}">Pickle</CheckBox>
+            <CheckBox VerticalAlignment="Center" VerticalContentAlignment="Center" Height="20" FontSize="14" IsChecked="{Binding Path=Bread}">Bread</CheckBox>
+            <CheckBox VerticalAlignment="Center" VerticalContentAlignment="Center" Height="20" FontSize="14" IsChecked="{Binding Path=Pickle}">Pickle</CheckBox>
         </StackPanel>
         
 

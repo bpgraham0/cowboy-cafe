@@ -5,11 +5,14 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
-    public class BakedBeans : Side
+    public class BakedBeans : Side,INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// calorie info
         /// </summary>

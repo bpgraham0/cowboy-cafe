@@ -10,6 +10,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using CowboyCafe.Data;
+//using System.ComponentModel;
 
 namespace PointOfSale.CustomizationScreens
 {
@@ -21,6 +23,52 @@ namespace PointOfSale.CustomizationScreens
         public TexasTeaCustomization()
         {
             InitializeComponent();
+            
+        }
+
+        private void SmallSize_Click(object sender, RoutedEventArgs e)
+        {
+            if(DataContext is TexasTea data)
+            {
+                if(sender is Button button)
+                {
+                    data.Size = CowboyCafe.Data.Size.Small;
+                    
+                    SmallSize.Background = Brushes.LightBlue;
+                    MediumSize.Background = Brushes.White;
+                    LargeSize.Background = Brushes.White;
+
+
+                }
+            }
+        }
+
+        private void MediumSize_Click(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is TexasTea data)
+            {
+                if (sender is Button button)
+                {
+                    data.Size = CowboyCafe.Data.Size.Medium;
+                    SmallSize.Background = Brushes.White;
+                    MediumSize.Background = Brushes.LightBlue;
+                    LargeSize.Background = Brushes.White;
+                }
+            }
+        }
+
+        private void LargeSize_Click(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is TexasTea data)
+            {
+                if (sender is Button button)
+                {
+                    data.Size = CowboyCafe.Data.Size.Large;
+                    SmallSize.Background = Brushes.White;
+                    MediumSize.Background = Brushes.White;
+                    LargeSize.Background = Brushes.LightBlue;
+                }
+            }
         }
     }
 }

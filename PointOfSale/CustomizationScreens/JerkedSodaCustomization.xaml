@@ -9,6 +9,22 @@
     <Grid>
         <StackPanel>
             <TextBlock FontSize="34">Customize this Jerked Soda</TextBlock>
+            <CheckBox VerticalAlignment="Center" VerticalContentAlignment="Center" Height="20" FontSize="14" IsChecked="{Binding Path=Ice}">Ice</CheckBox>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock VerticalAlignment="Center" FontSize="16">Size:</TextBlock>
+                <Button Width="60" Height="30" Name="SmallSize" Margin="2,2,2,2" Click="SmallSize_Click">Small</Button>
+                <Button Width="60" Height="30" Name="MediumSize" Margin="2,2,2,2" Click="MediumSize_Click">Medium</Button>
+                <Button Width="60" Height="30" Name="LargeSize" Margin="2,2,2,2" Click="LargeSize_Click">Large</Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock VerticalAlignment="Center" FontSize="16">Flavor:</TextBlock>
+                <Button Width="90" Height="30" Name="CreamSoda" Margin="2,2,2,2" Click="CreamSoda_Click" >Cream Soda</Button>
+                <Button Width="90" Height="30" Name="OrangeSoda" Margin="2,2,2,2" Click="OrangeSoda_Click" >Orange Soda</Button>
+                <Button Width="90" Height="30" Name="RootBeer" Margin="2,2,2,2" Click="RootBeer_Click" >Root Beer</Button>
+                <Button Width="90" Height="30" Name="BirchBeer" Margin="2,2,2,2" Click="BirchBeer_Click" >Birch Beer</Button>
+                <Button Width="90" Height="30" Name="Sarsparilla" Margin="2,2,2,2" Click="Sarsparilla_Click" >Sarsparilla</Button>
+
+            </StackPanel>
         </StackPanel>
     </Grid>
 </UserControl>
