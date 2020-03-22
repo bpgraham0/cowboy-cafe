@@ -9,6 +9,9 @@ namespace CowboyCafe.DataTests
     public class MockOrderItem : IOrderItem
     {
         public double Price { get; set; }
+
+        public uint Calories { get; }
+
         public List<string> SpecialInstructions { get; set; }
     }
     public class OrderTests
