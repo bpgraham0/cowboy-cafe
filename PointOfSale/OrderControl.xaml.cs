@@ -64,7 +64,7 @@ namespace PointOfSale
             this.DataContext = new Order();
             Container.Child = new MenuItemSelectionControl();
 
-        }
+        }           
 
 
         //<ListBox x:Name="OrderListView" Background="White" ScrollViewer.VerticalScrollBarVisibility="Visible" HorizontalAlignment="Right" ScrollViewer.CanContentScroll="True" Height="396" Width="193" Margin="1,1,1,1"/>

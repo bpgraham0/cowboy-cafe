@@ -5,21 +5,22 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="250">
+             d:DesignHeight="450" d:DesignWidth="300">
     <Grid>
         <StackPanel Grid.RowSpan="2" Grid.Column="3" Margin="1,1,1,1">
 
             <StackPanel Orientation="Horizontal" Height="40" Background="White" Margin="1,1,1,1">
                 <TextBlock Height="40" TextAlignment="Center"  Background="White" Name="OrderNumber" FontSize="18" FontWeight="Bold" Text="{Binding Path= OrderNumber, StringFormat=Order {0} }"/>
             </StackPanel>
-            <ListBox Height="350" ItemsSource="{Binding Path = Items}" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Auto">
+            <ListBox Height="350" SelectionChanged="ListBox_SelectionChanged"  ItemsSource="{Binding Path = Items}" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Auto">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="60*"/>
-                                <ColumnDefinition Width="5*"/>
-                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="55*"/>
+                                <ColumnDefinition Width="auto" />
+                                <ColumnDefinition Width="35" />
+                                <ColumnDefinition Width="60"/>
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
                                 <RowDefinition/>
@@ -27,8 +28,9 @@
                             </Grid.RowDefinitions>
                             <TextBlock Grid.Column="0" Name="Item" Text="{Binding}" />
                             <ListView Grid.Column="0" Grid.Row="1" BorderBrush="White" Name="SpecialIntructions" ItemsSource="{Binding Path=SpecialInstructions}"/>
-                            <TextBlock Grid.Column="1" HorizontalAlignment="Right" Text="|"/>
-                            <TextBlock Grid.Column="2" Name="Price" HorizontalAlignment="Right" Text="{Binding Path=Price, StringFormat=c}" FontWeight="Bold"/>
+                            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="2,0,2,0" Text="|"/>
+                            <TextBlock Grid.Column="2"  Name="Price" Margin="2,0,2,0" HorizontalAlignment="Right" Text="{Binding Path=Price, StringFormat=c}" FontWeight="Bold"/>
+                            <Button Grid.Column="3" Width="50" Height="auto" Name="CancelButton" Margin="2,0,2,0" HorizontalAlignment="Right">X</Button>
 
                         </Grid>
                     </DataTemplate>
