@@ -14,6 +14,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PointOfSale.ExtensionMethods;
+using CowboyCafe.Data;
+using PointOfSale.CustomizationScreens;
 
 namespace PointOfSale
 {
@@ -29,7 +32,109 @@ namespace PointOfSale
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
+            if (orderControl == null) return;
+            object item = (sender as ListBox).SelectedItem;
+            (sender as ListBox).SelectedItem = null;
 
+            FrameworkElement screen = SwapScreenHelper(item);
+            orderControl?.SwapScreen(screen);
+
+
+        }
+
+        private void RemoveButtonClicked(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is Order data)
+            {
+                if (sender is Button button)
+                {
+                    if (button.DataContext is IOrderItem item)
+                        data.Remove(item);
+
+                }
+            }
+        }
+
+        private FrameworkElement SwapScreenHelper(object item)
+        {
+            FrameworkElement screen = new MenuItemSelectionControl();
+            if (item is AngryChicken)
+            {
+                screen = new AngryChickenCustomization();
+                screen.DataContext = item;
+            }
+            else if (item is CowpokeChili)
+            {
+                screen = new CowpokeChiliCustomization();
+                screen.DataContext = item;
+            }
+            else if (item is RustlersRibs)
+            {
+                screen = new RustlersRibsCustomization();
+                screen.DataContext = item;
+            }
+            else if (item is PecosPulledPork)
+            {
+                screen = new PecosPulledPorkCustomization();
+                screen.DataContext = item;
+            }
+            else if (item is TrailBurger)
+            {
+                screen = new TrailBurgerCustomization();
+                screen.DataContext = item;
+            }
+            else if (item is DakotaDoubleBurger)
+            {
+                screen = new DakotaDoubleBurgerCustomization();
+                screen.DataContext = item;
+            }
+            else if (item is TexasTripleBurger)
+            {
+                screen = new TexasTripleBurgerCustomization();
+                screen.DataContext = item;
+            }
+            else if (item is PanDeCampo)
+            {
+                screen = new PanDeCampoCustomization();
+                screen.DataContext = item;
+            }
+            else if (item is CornDodgers)
+            {
+                screen = new CornDodgersCustomization();
+                screen.DataContext = item;
+            }
+            else if (item is ChiliCheeseFries)
+            {
+                screen = new ChiliCheeseFriesCustomization();
+                screen.DataContext = item;
+            }
+            else if (item is BakedBeans)
+            {
+                screen = new BakedBeansCustomization();
+                screen.DataContext = item;
+            }
+            else if (item is JerkedSoda)
+            {
+                screen = new JerkedSodaCustomization();
+                screen.DataContext = item;
+            }
+            else if (item is CowboyCoffee)
+            {
+                screen = new CowboyCoffeeCustomization();
+                screen.DataContext = item;
+            }
+            else if (item is TexasTea)
+            {
+                screen = new TexasTeaCustomization();
+                screen.DataContext = item;
+            }
+            else if (item is Water)
+            {
+                screen = new WaterCustomization();
+                screen.DataContext = item;
+            }
+            return screen;
         }
     }
 }
