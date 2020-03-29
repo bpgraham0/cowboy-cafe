@@ -116,7 +116,7 @@ namespace CowboyCafe.DataTests
         {
             var order = new Order();
             var order2 = new Order();
-            Assert.Equal(order.OrderNumber, order2.OrderNumber);
+            Assert.Equal(order.OrderNumber+1, order2.OrderNumber);
         }
     }
 }

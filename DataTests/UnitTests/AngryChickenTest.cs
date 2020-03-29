@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Xunit;
 using CowboyCafe.Data;
+using System.ComponentModel;
 
 namespace CowboyCafe.DataTests
 {
@@ -59,5 +60,6 @@ namespace CowboyCafe.DataTests
             Assert.Contains("hold pickle", chicken.SpecialInstructions);
             Assert.Contains("hold bread", chicken.SpecialInstructions);
         }
+
     }
 }

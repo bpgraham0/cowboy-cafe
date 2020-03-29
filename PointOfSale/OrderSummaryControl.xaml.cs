@@ -45,13 +45,18 @@ namespace PointOfSale
 
         private void RemoveButtonClicked(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
+            if (orderControl == null) return;
+            FrameworkElement screen = new MenuItemSelectionControl();
             if (DataContext is Order data)
             {
                 if (sender is Button button)
                 {
                     if (button.DataContext is IOrderItem item)
+                    {
+                        orderControl?.SwapScreen(screen);
                         data.Remove(item);
-
+                    }
                 }
             }
         }

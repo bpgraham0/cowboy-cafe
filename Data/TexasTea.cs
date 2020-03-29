@@ -27,7 +27,8 @@ namespace CowboyCafe.Data
             {
                 size = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialIngredients"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
             }
         }
 
@@ -104,7 +105,7 @@ namespace CowboyCafe.Data
             {
                 ice = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialIngredients"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
 
@@ -121,7 +122,7 @@ namespace CowboyCafe.Data
             {
                 sweet = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Sweet"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialIngredients"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
 
@@ -138,7 +139,7 @@ namespace CowboyCafe.Data
             {
                 lemon = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Lemon"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialIngredients"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
 
