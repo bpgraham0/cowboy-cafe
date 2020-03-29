@@ -30,6 +30,11 @@ namespace PointOfSale
             InitializeComponent();
         }
 
+        /// <summary>
+        /// upon selecting an item from the list box, changes to that item's screen
+        /// </summary>
+        /// <param name="sender">ListBox</param>
+        /// <param name="e">event args</param>
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var orderControl = this.FindAncestor<OrderControl>();
@@ -43,6 +48,11 @@ namespace PointOfSale
 
         }
 
+        /// <summary>
+        /// finds the item and removes it from the order and sends screen back to menu item selection
+        /// </summary>
+        /// <param name="sender">button</param>
+        /// <param name="e">event args</param>
         private void RemoveButtonClicked(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<OrderControl>();
@@ -61,6 +71,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// takes in an item and finds the corresponding screen for it and then applies the context to it
+        /// </summary>
+        /// <param name="item">menu item</param>
+        /// <returns>returns the screen with the context</returns>
         private FrameworkElement SwapScreenHelper(object item)
         {
             FrameworkElement screen = new MenuItemSelectionControl();
