@@ -32,6 +32,8 @@
         <Rectangle Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="5" VerticalAlignment="Top" StrokeThickness="2" Stroke="Black" StrokeDashArray="2"/>
         <TextBlock Grid.Row="3" Grid.Column="1" TextAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="5" FontSize="24" Text="How would you like to pay?"/>
 
+        <TextBlock Name="ErrorTextBlock" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="7" FontSize="16" Foreground="Red" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="SemiBold" Text=""/>
+
         <Button Name="CashButton" Grid.Row="4" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="2" Background="LawnGreen" FontSize="30" Click="CashButton_Click">Cash</Button>
         <Button Name="CreditButton" Grid.Row="4" Grid.RowSpan="2" Grid.Column="4" Grid.ColumnSpan="2" Background="Aqua" FontSize="30" Click="CreditButton_Click" >Credit</Button>
         <Button Name="CancelTransactionButton" Height="auto" Grid.Row="7"  Grid.Column="2" Grid.ColumnSpan="3" Background="PaleVioletRed" FontSize="18" Click="CancelTransactionButton_Click" >Cancel Transaction</Button>

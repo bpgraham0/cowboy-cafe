@@ -12,6 +12,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CowboyCafe.Data;
 using PointOfSale.ExtensionMethods;
+using CashRegister;
 
 namespace PointOfSale
 {
@@ -20,10 +21,13 @@ namespace PointOfSale
     /// </summary>
     public partial class TransactionControl : UserControl
     {
+
+
         public TransactionControl()
         {
             InitializeComponent();
         }
+
 
         private void CashButton_Click(object sender, RoutedEventArgs e)
         {
@@ -32,7 +36,32 @@ namespace PointOfSale
 
         private void CreditButton_Click(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
+            CardTerminal terminal = new CardTerminal();
 
+            ResultCode result = terminal.ProcessTransaction((orderControl.DataContext as Order).Total);
+
+            if(result == ResultCode.Success)
+            {
+                ReceiptPrinter receiptPrinter = new ReceiptPrinter();
+                Order order = (this.DataContext as Order);
+                receiptPrinter.Print
+                    ("Date: " + DateTime.Now.ToString()+"\n"+
+                    "Order: " + order.OrderNumber.ToString() + "\n" + 
+                    order.Items.ToString()+"\n"+
+                    "Subtotal: "+order.Subtotal.ToString()+"\n" +
+                    "Total: "+order.Total.ToString()+ "\n"+
+                    "Processed by Credit \n"
+                    
+                    );
+                orderControl.DataContext = new Order();
+                orderControl.Container.Child = new MenuItemSelectionControl();
+            }
+            else
+            {
+                ErrorTextBlock.Text = "ERROR! The transaction had a(n) " + result.ToString()+"!";
+            }
+            
         }
 
         private void CancelTransactionButton_Click(object sender, RoutedEventArgs e)
