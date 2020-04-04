@@ -23,8 +23,8 @@
             <ColumnDefinition Width="325" MaxWidth="350"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="10*"/>
-            <RowDefinition Height="90*"/>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="405"/>
         </Grid.RowDefinitions>
         <Grid Height="auto" Grid.ColumnSpan="3">
             <Grid.ColumnDefinitions>
@@ -33,9 +33,9 @@
                 <ColumnDefinition Width="40*"/>
             </Grid.ColumnDefinitions>
             
-            <Button Name="ItemSelection" Height="50" Grid.Column="0"  Width="auto"  Margin="1,1,1,1" Click="ItemSelection_Click">Item Selection</Button>
-            <Button Name="CancelOrder" Height="50" Grid.Column="1" Width="auto" Margin="1,1,1,1" Click="CancelOrder_Click">Cancel Order</Button>
-            <Button Name="CompleteOrder" Height="50" Grid.Column="2" Width="auto" Margin="1,1,1,1" Click="CompleteOrder_Click">Complete Order</Button>
+            <Button Name="ItemSelection" VerticalAlignment="Stretch" Height="45" Grid.Column="0"  Width="auto"  Margin="1,1,1,1" Click="ItemSelection_Click">Item Selection</Button>
+            <Button Name="CancelOrder"  VerticalAlignment="Stretch"  Height="45" Grid.Column="1" Width="auto" Margin="1,1,1,1" Click="CancelOrder_Click">Cancel Order</Button>
+            <Button Name="CompleteOrder" VerticalAlignment="Stretch"  Height="45" Grid.Column="2" Width="auto" Margin="1,1,1,1" Click="CompleteOrder_Click">Complete Order</Button>
         </Grid>
         <Border Name="Container" Grid.Row="1" Grid.ColumnSpan="3">
             <local:MenuItemSelectionControl />

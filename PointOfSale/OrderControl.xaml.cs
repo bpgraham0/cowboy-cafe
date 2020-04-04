@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CowboyCafe.Data;
+
 namespace PointOfSale
 {
     /// <summary>
@@ -61,8 +62,7 @@ namespace PointOfSale
         /// <param name="e">argument</param>
         private void CompleteOrder_Click(object sender, RoutedEventArgs e)
         {
-            this.DataContext = new Order();
-            Container.Child = new MenuItemSelectionControl();
+            Container.Child = new TransactionControl();
 
         }           
 

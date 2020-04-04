@@ -49,6 +49,14 @@ namespace CowboyCafe.Data
                 return total;
             }
         }
+
+        public double Total
+        {
+            get
+            {
+                return Subtotal * 1.16;
+            }
+        }
         
         /// <summary>
         /// generates list of special instructions
@@ -70,6 +78,8 @@ namespace CowboyCafe.Data
             }
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Total"));
+
         }
 
         /// <summary>
@@ -87,14 +97,21 @@ namespace CowboyCafe.Data
             }
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Total"));
+
 
         }
 
         private void OnItemChanged(object sender, PropertyChangedEventArgs e)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
-            if (e.PropertyName == "Price") 
+            if (e.PropertyName == "Price")
+            {
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Total"));
+            }
+             
+
         }
     }
 }
