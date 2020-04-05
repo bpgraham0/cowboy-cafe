@@ -1,6 +1,6 @@
 ﻿/* Author: Ben Graham
- * Class: TransactionControl.xaml.cs
- * Purpose: Handles the selection of transaction method
+ * Class: ChangeView.xaml.cs
+ * Purpose: Handles showing user change and printing receipt
  */
 using System;
 using System.Collections.Generic;
@@ -15,83 +15,52 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CowboyCafe.Data;
-using PointOfSale.ExtensionMethods;
 using CashRegister;
 
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for TransactionControl.xaml
+    /// Interaction logic for ChangeView.xaml
     /// </summary>
-    public partial class TransactionControl : UserControl
+    public partial class ChangeView : UserControl
     {
-
-        /// <summary>
-        /// initializes component
-        /// </summary>
-        public TransactionControl()
+        public ChangeView(OrderControl orderC,double change)
         {
             InitializeComponent();
+            orderControl = orderC;
+            ChangeDisplayText.Text = String.Format("Resulting Change: {0:C}", change);
+            ReceiptPrinter receiptPrinter = new ReceiptPrinter();
+            receiptPrinter.Print(ReceiptBuilder(change));
+
         }
+        /// <summary>
+        /// holds refrence to order control
+        /// </summary>
+        public OrderControl orderControl { get; set; }
 
         /// <summary>
-        /// takes user to cash control where they can caryy out payment in cash
+        /// creates new order and changes screen back to menu selection
         /// </summary>
-        /// <param name="sender">button</param>
+        /// <param name="sender">button </param>
         /// <param name="e">event args</param>
-        private void CashButton_Click(object sender, RoutedEventArgs e)
+        private void NewOrderButton_Click(object sender, RoutedEventArgs e)
         {
-            var orderControl = this.FindAncestor<OrderControl>();
-            CashRegisterControl control = new CashRegisterControl(orderControl);
-            orderControl.Container.Child = control;
-        }
-        /// <summary>
-        /// takes user to finish paying with credit
-        /// </summary>
-        /// <param name="sender">button</param>
-        /// <param name="e">event args</param>
-        private void CreditButton_Click(object sender, RoutedEventArgs e)
-        {
-            var orderControl = this.FindAncestor<OrderControl>();
-            CardTerminal terminal = new CardTerminal();
-
-            ResultCode result = terminal.ProcessTransaction((orderControl.DataContext as Order).Total);
-
-            if(result == ResultCode.Success)
-            {
-                ReceiptPrinter receiptPrinter = new ReceiptPrinter();
-                receiptPrinter.Print( ReceiptBuilder());
-                orderControl.DataContext = new Order();
-                orderControl.Container.Child = new MenuItemSelectionControl();
-            }
-            else
-            {
-                ErrorTextBlock.Text = "ERROR! The transaction had a(n) " + result.ToString()+"!";
-            }
-            
-        }
-        /// <summary>
-        /// wipes the order and resets screen
-        /// </summary>
-        /// <param name="sender">button</param>
-        /// <param name="e">sender</param>
-        private void CancelTransactionButton_Click(object sender, RoutedEventArgs e)
-        {
-            var orderControl = this.FindAncestor<OrderControl>();
             orderControl.DataContext = new Order();
             orderControl.Container.Child = new MenuItemSelectionControl();
         }
 
+
         /// <summary>
-        /// private helper method that format's the order in the form of a recepipt
+        /// private helper method that formats the order in the form of a receipt
         /// </summary>
-        /// <returns></returns>
-        private string ReceiptBuilder()
+        /// <param name="change">change from transaction</param>
+        /// <returns>string being printed</returns>
+        private string ReceiptBuilder(double change)
         {
             StringBuilder sb = new StringBuilder();
             int space;
-            Order order = (this.DataContext as Order);
-            
+            Order order = (orderControl.DataContext as Order);
+
             for (int i = 0; i < 45; i++)
             {
                 sb.Append("_");
@@ -109,12 +78,12 @@ namespace PointOfSale
             {
                 sb.Append(" -");
                 sb.Append(item);
-                space = spaceCalculator(item.ToString().Length+2,(int)item.Price);
-                for(int i = 0; i <space; i++)
+                space = spaceCalculator(item.ToString().Length + 2, (int)item.Price);
+                for (int i = 0; i < space; i++)
                 {
                     sb.Append(" ");
                 }
-                sb.AppendFormat("{0:C}\n",item.Price);
+                sb.AppendFormat("{0:C}\n", item.Price);
                 if (item.SpecialInstructions != null)
                 {
                     foreach (string instruction in item.SpecialInstructions)
@@ -124,15 +93,13 @@ namespace PointOfSale
                         sb.Append("\n");
                     }
                 }
-                
-
             }
             for (int i = 0; i < 45; i++)
             {
                 sb.Append(".");
             }
             sb.Append("\n");
-            sb.Append("Subtotal:" );
+            sb.Append("Subtotal:");
             space = spaceCalculator("Subtotal:".Length, (int)order.Subtotal);
             for (int i = 0; i < space; i++)
             {
@@ -147,14 +114,21 @@ namespace PointOfSale
                 sb.Append(" ");
             }
             sb.AppendFormat("{0:C}\n", order.Total);
-            sb.Append("Processed by: Credit\n");
+            sb.Append("Amount Paid:");
+            space = spaceCalculator("Amount Paid:".Length, (int)order.Total);
+            for (int i = 0; i < space; i++)
+            {
+                sb.Append(" ");
+            }
+            sb.AppendFormat("{0:C}\n", change);
+            sb.Append("Processed by: Cash\n");
             for (int i = 0; i < 45; i++)
             {
                 sb.Append("_");
             }
             sb.Append("\n");
 
-            
+
             return sb.ToString();
         }
 

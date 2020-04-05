@@ -50,11 +50,15 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// holds value of subtotal * 1.16 tax
+        /// </summary>
         public double Total
         {
             get
             {
-                return Subtotal * 1.16;
+                double i = Subtotal * 1.16;
+                return Convert.ToDouble(String.Format("{0:0.##}",i));
             }
         }
         

@@ -84,5 +84,7 @@ namespace CowboyCafe.Data
 
             return Size.ToString() + " Baked Beans";
         }
+
+        
     }
 }

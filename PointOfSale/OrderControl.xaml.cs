@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CowboyCafe.Data;
+using CashRegister;
 
 namespace PointOfSale
 {
@@ -32,6 +33,21 @@ namespace PointOfSale
 
             var data = new Order();
             this.DataContext = data;
+        }
+        /// <summary>
+        /// private backing for order controls main register
+        /// </summary>
+        private static CashRegisterModelView register = new CashRegisterModelView();
+
+        /// <summary>
+        /// public getter for Register
+        /// </summary>
+        public CashRegisterModelView Register
+        {
+            get
+            {
+                return register;
+            }
         }
 
         /// <summary>
@@ -66,11 +82,10 @@ namespace PointOfSale
 
         }           
 
-
-        //<ListBox x:Name="OrderListView" Background="White" ScrollViewer.VerticalScrollBarVisibility="Visible" HorizontalAlignment="Right" ScrollViewer.CanContentScroll="True" Height="396" Width="193" Margin="1,1,1,1"/>
-
-
-
+        /// <summary>
+        /// helper method that changes screen to passed in element
+        /// </summary>
+        /// <param name="element">Framework element</param>
         public void SwapScreen(FrameworkElement element)
         {
             Container.Child = element;
