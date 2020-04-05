@@ -18,6 +18,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentat
 	ProjectSection(SolutionItems) = preProject
 		Documentation\CowboyCafe-2.pdf = Documentation\CowboyCafe-2.pdf
 		Documentation\CowboyCafe.pdf = Documentation\CowboyCafe.pdf
+		Documentation\PointOfSale-2.pdf = Documentation\PointOfSale-2.pdf
 		Documentation\PointOfSale.pdf = Documentation\PointOfSale.pdf
 	EndProjectSection
 EndProject

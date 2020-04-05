@@ -109,7 +109,7 @@ namespace PointOfSale
             {
                 sb.Append(" -");
                 sb.Append(item);
-                space = spaceCalculator(item.ToString().Length+2,(int)item.Price);
+                space = SpaceCalculator(item.ToString().Length+2,(int)item.Price);
                 for(int i = 0; i <space; i++)
                 {
                     sb.Append(" ");
@@ -133,7 +133,7 @@ namespace PointOfSale
             }
             sb.Append("\n");
             sb.Append("Subtotal:" );
-            space = spaceCalculator("Subtotal:".Length, (int)order.Subtotal);
+            space = SpaceCalculator("Subtotal:".Length, (int)order.Subtotal);
             for (int i = 0; i < space; i++)
             {
                 sb.Append(" ");
@@ -141,7 +141,7 @@ namespace PointOfSale
             sb.AppendFormat("{0:C}\n", order.Subtotal);
 
             sb.Append("Total after 16% tax:");
-            space = spaceCalculator("Total after 16% tax:".Length, (int)order.Total);
+            space = SpaceCalculator("Total after 16% tax:".Length, (int)order.Total);
             for (int i = 0; i < space; i++)
             {
                 sb.Append(" ");
@@ -165,7 +165,7 @@ namespace PointOfSale
         /// <param name="stringLength">string length</param>
         /// <param name="price">price of item/total</param>
         /// <returns>number of spaces to be printed</returns>
-        private int spaceCalculator(int stringLength, int price)
+        private int SpaceCalculator(int stringLength, int price)
         {
             return (40 - stringLength - price.ToString().Length);
         }

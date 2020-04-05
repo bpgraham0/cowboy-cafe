@@ -62,7 +62,7 @@ namespace PointOfSale
        /// </summary>
        /// <param name="sender">event from CashRegisterModelView</param>
        /// <param name="e">event args</param>
-        public void updateTotal(object sender, EventArgs e)
+        private void updateTotal(object sender, EventArgs e)
         {
             GoalTotalText.Text = String.Format("Cash entered so far: {0:C}", (DataContext as CashRegisterModelView).TotalValue);
 
