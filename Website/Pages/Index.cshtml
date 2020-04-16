@@ -1,0 +1,135 @@
+﻿@page
+@model IndexModel
+@using CowboyCafe.Data;
+
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Cowyboy Cafe</h1>
+    <p>
+        We at Cowboy Cafe are proud to bring you authentic trail meals from the American West.
+        Shake off the dust on your boots and sake your thirst with one of our old-fashioned hand-jerked sodas.
+        Dip your Pan de Campo into a bowl of beans.
+        Or conquer the the mighty Texas Triple Burger! You’ve had a hard ride - so take it easy with us.
+    </p>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <h2>Entrees</h2>
+                <div class="dropdown-divider"></div>
+                <div class="dropdown-divider"></div>
+                <ul>
+
+                    @foreach (IOrderItem item in Menu.Entrees())
+                    {
+                        <li class="list-unstyled">
+                            <div class="menu-item">
+                                <h4>@item.ToString()</h4>
+                                <div><u><b>Price:</b></u> @String.Format("{0:C}",item.Price)</div>
+                                <div><u><b>Calories:</b></u> @item.Calories</div>
+                                <div class="dropdown-divider"></div>
+                            </div>
+                        </li>
+                    }
+
+                </ul>
+            </div>
+            <div class="col-sm">
+                <h2>Sides</h2>
+                <div class="dropdown-divider"></div>
+                <div class="dropdown-divider"></div>
+                <ul>
+
+                    @foreach (IOrderItem item in Menu.Sides())
+                    {
+                        <li class="list-unstyled">
+                            <div class="menu-item">
+
+                                @if (item is Side side)
+                                {
+                                    <h4>@side.Name()</h4>
+                                    <b><u>Prices:</u></b>
+                                    <div>
+                                        Small: @String.Format("{0:C}", side.Price) @{side.Size = Size.Medium; }
+                                        Medium: @String.Format("{0:C}", side.Price) @{side.Size = Size.Large; }
+                                        Large: @String.Format("{0:C}", side.Price)
+                                    </div>
+
+                                    <b><u>Calories:</u></b>
+                                    <div>
+                                        Small: @side.Calories @{side.Size = Size.Medium; }
+                                        Medium: @side.Calories @{side.Size = Size.Large; }
+                                        Large: @side.Calories
+                                    </div>
+
+                                }
+                                <div class="dropdown-divider"></div>
+                            </div>
+                        </li>
+                    }
+
+                </ul>
+
+            </div>
+            <div class="col-sm">
+                <h2>Drinks</h2>
+                <div class="dropdown-divider"></div>
+                <div class="dropdown-divider"></div>
+                <ul>
+
+                    @foreach (IOrderItem item in Menu.Drinks())
+                    {
+                        <li class="list-unstyled">
+                            <div class="menu-item">
+                                @if (item is Drink drink)
+                                {
+                                    @if (drink is Water water)
+                                    {
+                                        <h4>@water.Name()</h4>
+
+                                        <div><u><b>Price:</b></u> @String.Format("{0:C}", water.Price)</div>
+                                        <div><u><b>Calories:</b></u> @water.Calories</div>
+                                    }
+
+                                    else
+                                    {
+                                        <h4>@drink.Name()</h4>
+
+                                        <b><u>Prices:</u></b>
+                                        <div>
+                                            Small: @String.Format("{0:C}", drink.Price) @{drink.Size = Size.Medium; }
+                                            Medium: @String.Format("{0:C}", drink.Price) @{drink.Size = Size.Large; }
+                                            Large: @String.Format("{0:C}", drink.Price)
+                                        </div>
+
+                                        <b><u>Calories:</u></b>
+                                        <div>
+                                            Small: @drink.Calories @{drink.Size = Size.Medium; }
+                                            Medium: @drink.Calories @{drink.Size = Size.Large; }
+                                            Large: @drink.Calories
+                                        </div>
+                                    }
+                                    @if (drink is JerkedSoda soda)
+                                    {
+
+                                        <b><u>Flavors:</u></b>
+                                        <div>Birch Beer | Root Beer | Cream Soda </div>
+                                        <div> Orange Soda | Sasparilla</div>
+
+                                    }
+
+                                }
+                                <div class="dropdown-divider"></div>
+                            </div>
+                        </li>
+                    }
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>

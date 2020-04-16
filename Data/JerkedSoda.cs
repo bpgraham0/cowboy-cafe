@@ -155,5 +155,14 @@ namespace CowboyCafe.Data
             }
         }
 
+
+        /// <summary>
+        /// gets just the name of item
+        /// </summary>
+        /// <returns>name of item</returns>
+        public override string Name()
+        {
+            return "Jerked Soda";
+        }
     }
 }

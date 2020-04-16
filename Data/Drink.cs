@@ -8,7 +8,7 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public abstract class Drink :IOrderItem
+    public abstract class Drink : IOrderItem
     {
         /// <summary>
         /// initalizes size to small
@@ -31,5 +31,10 @@ namespace CowboyCafe.Data
         /// Gets the list of special instructions for the drink
         /// </summary>
         public virtual List<string> SpecialInstructions { get; set; }
+
+        /// <summary>
+        /// gets name of item
+        /// </summary>
+        public abstract string Name();
     }
 }

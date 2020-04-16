@@ -1,4 +1,4 @@
-﻿/* Author: Ben Graham
+﻿ /* Author: Ben Graham
  * Class: CowboyCoffee.cs
  * Purpose: Information about cowboy coffee
  */
@@ -149,6 +149,15 @@ namespace CowboyCafe.Data
 
 
             return  Size.ToString() + " Cowboy Coffee";
+        }
+
+        /// <summary>
+        /// gets just the name of item
+        /// </summary>
+        /// <returns>name of item</returns>
+        public override string Name()
+        {
+            return "Cowboy Coffee";
         }
 
     }

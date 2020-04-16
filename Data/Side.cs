@@ -33,8 +33,12 @@ namespace CowboyCafe.Data
         /// generates list of special instructions
         /// </summary>
         public virtual List<string> SpecialInstructions { get; }
-        
-        //public virtual List<string> SpecialInstructions => new List<string>();
+
+
+        /// <summary>
+        /// gets name of item
+        /// </summary>
+        public abstract string Name();
 
     }
 }
