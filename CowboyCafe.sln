@@ -16,13 +16,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PointOfSale", "PointOfSale\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{7527F616-88CE-4BBF-BA6A-D32C2A3C2F8E}"
 	ProjectSection(SolutionItems) = preProject
-		Documentation\CowboyCafe-2.pdf = Documentation\CowboyCafe-2.pdf
+		Documentation\CowboyCafe-2_Website.pdf = Documentation\CowboyCafe-2_Website.pdf
 		Documentation\CowboyCafe.pdf = Documentation\CowboyCafe.pdf
 		Documentation\PointOfSale-2.pdf = Documentation\PointOfSale-2.pdf
 		Documentation\PointOfSale.pdf = Documentation\PointOfSale.pdf
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Website", "Website\Website.csproj", "{1EDBB5B2-3B4E-4F78-AA36-DB9211EC5CEC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Website", "Website\Website.csproj", "{1EDBB5B2-3B4E-4F78-AA36-DB9211EC5CEC}"
 	ProjectSection(ProjectDependencies) = postProject
 		{C3BFDB18-4ACD-495B-9CCE-675B7A8FD8FE} = {C3BFDB18-4ACD-495B-9CCE-675B7A8FD8FE}
 	EndProjectSection
