@@ -13,6 +13,11 @@ namespace CowboyCafe.DataTests
         public uint Calories { get; }
 
         public List<string> SpecialInstructions { get; set; }
+
+        public string Name()
+        {
+            return this.ToString();
+        }
     }
     public class OrderTests
     {

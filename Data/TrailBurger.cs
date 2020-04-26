@@ -140,6 +140,15 @@ namespace CowboyCafe.Data
         {
             return "Trail Burger";
         }
+
+        /// <summary>
+        /// gets just the name of item
+        /// </summary>
+        /// <returns>name of item</returns>
+        public override string Name()
+        {
+            return this.ToString();
+        }
     }
 }
 

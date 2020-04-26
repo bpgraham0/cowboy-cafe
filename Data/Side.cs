@@ -40,5 +40,6 @@ namespace CowboyCafe.Data
         /// </summary>
         public abstract string Name();
 
+
     }
 }

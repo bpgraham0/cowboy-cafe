@@ -36,5 +36,9 @@ namespace CowboyCafe.Data
         /// gets name of item
         /// </summary>
         public abstract string Name();
+
+        
+
+
     }
 }

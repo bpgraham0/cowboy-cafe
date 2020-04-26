@@ -24,5 +24,12 @@ namespace CowboyCafe.Data
         /// Gets the calories of the entree
         /// </summary>
         public abstract uint Calories { get; }
+
+        /// <summary>
+        /// gets name of item
+        /// </summary>
+        public abstract string Name();
+
+        
     }
 }

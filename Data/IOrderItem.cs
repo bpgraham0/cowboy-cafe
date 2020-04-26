@@ -25,6 +25,11 @@ namespace CowboyCafe.Data
         /// </summary>
         public List<string> SpecialInstructions { get;  }
 
+        /// <summary>
+        /// gets name of item
+        /// </summary>
+        public abstract string Name();
+
 
 
 
