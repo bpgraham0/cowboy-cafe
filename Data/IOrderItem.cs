@@ -31,7 +31,10 @@ namespace CowboyCafe.Data
         public abstract string Name();
 
 
-
+        /// <summary>
+        /// gets category of item
+        /// </summary>
+        public abstract string Category { get; }
 
     }
 }

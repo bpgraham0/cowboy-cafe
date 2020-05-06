@@ -6,13 +6,11 @@
     ViewData["Title"] = "Home page";
 }
 
-    <form id="item-database">
-       
-        
+    <form >
         <div class="text-center">
             <div class="container">
-                <div class="row">
-                    <div class="col-auto" id="filters">
+                <div class="row d-sm-flex">
+                    <div class="col-sm" id="filters">
                         <h4>Price</h4>
                         <div>
                             Between
@@ -22,7 +20,7 @@
                         </div>
                     </div>
 
-                    <div class="col-auto" id="filters">
+                    <div class="col-sm" id="filters">
                         <h4>Calories</h4>
                         <div>
                             Between
@@ -31,7 +29,7 @@
                             <input name="CaloriesMax" type="number" min="0" max="1000" step="1" placeholder="max" value="@Model.CaloriesMax" />
                         </div>
                     </div>
-                    <div class="col-auto" id="filters">
+                    <div class="col-sm" id="filters">
                         <h4>Category</h4>
                         @foreach (String category in Menu.Categories)
                         {
@@ -41,7 +39,7 @@
                             </label>
                         }
                     </div>
-                    <div class="col-auto" id="filters">
+                    <div class="col-sm" id="filters">
                         <h4>Search</h4>
                         <div id="search">
                             <input type="text" name="SearchTerms" value="@Model.SearchTerms" />
@@ -65,81 +63,73 @@
                 </div>
 
                 <div class="row">
-                    <div class="col">
-                        <div id="results">
-                            <ul>
-                                @foreach (IOrderItem item in Model.itemList)
+                        @foreach (IOrderItem item in Model.itemList)
+                        {
+                            <div class="col-sm-4">
+                                @if (item is Entree entree)
                                 {
-                                    <li class="list-unstyled">
-                                        <div class="menu-item">
-                                            @if (item is Entree entree)
-                                            {
-                                                <h4>@entree.ToString() (Entree)</h4>
-                                                <div><u><b>Price:</b></u> @String.Format("{0:C}", entree.Price)</div>
-                                                <div><u><b>Calories:</b></u> @entree.Calories</div>
-                                                <div class="dropdown-divider"></div>
-                                            }
-                                            else if (item is Side side)
-                                            {
-                                                side.Size = Size.Small;
-                                                <h4>@side.Name() (Side)</h4>
-                                                <b><u>Prices:</u></b>
-                                                <div>
-                                                    Small: @String.Format("{0:C}", side.Price) @{side.Size = Size.Medium; }
-                                                    Medium: @String.Format("{0:C}", side.Price) @{side.Size = Size.Large; }
-                                                    Large: @String.Format("{0:C}", side.Price)
-                                                </div>
-
-                                                <b><u>Calories:</u></b>
-                                                <div>
-                                                    Small: @{side.Size = Size.Small;}@side.Calories @{side.Size = Size.Medium; }
-                                                    Medium: @side.Calories @{ side.Size = Size.Large; }
-                                                    Large: @side.Calories
-                                                </div>
-                                                <div class="dropdown-divider"></div>
-                                            }
-                                            else if (item is Drink drink)
-                                            {
-                                                <h4>@drink.Name() (Drink)</h4>
-                                                drink.Size = Size.Small;
-                                                if (drink is Water water)
-                                                {
-                                                    <div><u><b>Price:</b></u> @String.Format("{0:C}", water.Price)</div>
-                                                    <div><u><b>Calories:</b></u> @water.Calories</div>
-                                                }
-
-                                                else
-                                                {
-                                                    <b><u>Prices:</u></b>
-                                                    <div>
-                                                        Small: @String.Format("{0:C}", drink.Price) @{drink.Size = Size.Medium; }
-                                                        Medium: @String.Format("{0:C}", drink.Price) @{drink.Size = Size.Large; }
-                                                        Large: @String.Format("{0:C}", drink.Price)
-                                                    </div>
-
-                                                    <b><u>Calories:</u></b>
-                                                    <div>
-                                                        Small: @{drink.Size = Size.Small;}@drink.Calories @{drink.Size = Size.Medium; }
-                                                        Medium: @drink.Calories @{drink.Size = Size.Large; }
-                                                        Large: @drink.Calories
-                                                    </div>
-                                                }
-                                                @if (drink is JerkedSoda soda)
-                                                {
-
-                                                    <b><u>Flavors:</u></b>
-                                                    <div>Birch Beer | Root Beer | Cream Soda </div>
-                                                    <div> Orange Soda | Sasparilla</div>
-
-                                                }
-                                                <div class="dropdown-divider"></div>
-                                            }
-                                        </div>
-                                    </li>
+                                    <h4>@entree.ToString() (Entree)</h4>
+                                    <div><u><b>Price:</b></u> @String.Format("{0:C}", entree.Price)</div>
+                                    <div><u><b>Calories:</b></u> @entree.Calories</div>
+                                    <div class="dropdown-divider"></div>
                                 }
-                            </ul>
-                        </div>
-                    </div>
+                                else if (item is Side side)
+                                {
+                                    side.Size = Size.Small;
+                                    <h4>@side.Name() (Side)</h4>
+                                    <b><u>Prices:</u></b>
+                                    <div>
+                                        Small: @String.Format("{0:C}", side.Price) @{side.Size = Size.Medium; }
+                                        Medium: @String.Format("{0:C}", side.Price) @{side.Size = Size.Large; }
+                                        Large: @String.Format("{0:C}", side.Price)
+                                    </div>
+
+                                    <b><u>Calories:</u></b>
+                                    <div>
+                                        Small: @{side.Size = Size.Small;}@side.Calories @{side.Size = Size.Medium; }
+                                        Medium: @side.Calories @{ side.Size = Size.Large; }
+                                        Large: @side.Calories
+                                    </div>
+                                    <div class="dropdown-divider"></div>
+                                }
+                                else if (item is Drink drink)
+                                {
+                                    <h4>@drink.Name() (Drink)</h4>
+                                    drink.Size = Size.Small;
+                                    if (drink is Water water)
+                                    {
+                                        <div><u><b>Price:</b></u> @String.Format("{0:C}", water.Price)</div>
+                                        <div><u><b>Calories:</b></u> @water.Calories</div>
+                                    }
+
+                                    else
+                                    {
+                                        <b><u>Prices:</u></b>
+                                        <div>
+                                            Small: @String.Format("{0:C}", drink.Price) @{drink.Size = Size.Medium; }
+                                            Medium: @String.Format("{0:C}", drink.Price) @{drink.Size = Size.Large; }
+                                            Large: @String.Format("{0:C}", drink.Price)
+                                        </div>
+
+                                        <b><u>Calories:</u></b>
+                                        <div>
+                                            Small: @{drink.Size = Size.Small;}@drink.Calories @{drink.Size = Size.Medium; }
+                                            Medium: @drink.Calories @{drink.Size = Size.Large; }
+                                            Large: @drink.Calories
+                                        </div>
+                                    }
+                                    @if (drink is JerkedSoda soda)
+                                    {
+
+                                        <b><u>Flavors:</u></b>
+                                        <div>Birch Beer | Root Beer | Cream Soda </div>
+                                        <div> Orange Soda | Sasparilla</div>
+
+                                    }
+                                    <div class="dropdown-divider"></div>
+                                }
+                            </div>
+                        }
                 </div>
             </div>
 

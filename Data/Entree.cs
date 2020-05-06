@@ -30,6 +30,10 @@ namespace CowboyCafe.Data
         /// </summary>
         public abstract string Name();
 
+        /// <summary>
+        /// gets category of item
+        /// </summary>
+        public virtual string Category { get; } = "Entree";
         
     }
 }
